@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f0fdfa" rx="12"/>
+  <g transform="translate(50,70)">
+    <rect x="0" y="30" width="300" height="140" rx="6" fill="#0e7490" opacity="0.08"/>
+    <rect x="0" y="30" width="300" height="140" rx="6" fill="none" stroke="#0e7490" stroke-width="1.5" opacity="0.4"/>
+    <rect x="15" y="50" width="55" height="45" rx="3" fill="#0e7490" opacity="0.35"/>
+    <rect x="15" y="105" width="55" height="45" rx="3" fill="#0e7490" opacity="0.25"/>
+    <rect x="80" y="60" width="55" height="45" rx="3" fill="#0e7490" opacity="0.3"/>
+    <rect x="80" y="115" width="55" height="35" rx="3" fill="#0e7490" opacity="0.2"/>
+    <rect x="160" y="55" width="30" height="40" rx="3" fill="#0e7490" opacity="0.4"/>
+    <rect x="200" y="55" width="30" height="40" rx="3" fill="#0e7490" opacity="0.3"/>
+    <rect x="160" y="105" width="30" height="40" rx="3" fill="#0e7490" opacity="0.25"/>
+    <rect x="200" y="105" width="30" height="40" rx="3" fill="#0e7490" opacity="0.35"/>
+    <rect x="250" y="65" width="35" height="55" rx="3" fill="#0e7490" opacity="0.15"/>
+    <rect x="250" y="65" width="35" height="55" rx="3" fill="none" stroke="#0e7490" stroke-width="1.5" stroke-dasharray="4 2" opacity="0.5"/>
+    <text x="267" y="97" font-family="Arial" font-size="7" fill="#0e7490" text-anchor="middle" opacity="0.6">EXP</text>
+    <line x1="165" y1="25" x2="270" y2="25" stroke="#0e7490" stroke-width="1" stroke-dasharray="3 2" opacity="0.3"/>
+    <text x="217" y="23" font-family="Arial" font-size="7" fill="#0e7490" text-anchor="middle" opacity="0.5">MURO</text>
+  </g>
+</svg>
