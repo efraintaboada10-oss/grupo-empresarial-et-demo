@@ -4,9 +4,7 @@ import { useState, useMemo, useCallback, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, ChevronDown, ArrowLeft, Search, LayoutGrid, Columns2, ChevronLeft, ChevronRight, Send } from "lucide-react"
 
-const redirectMap: Record<string, string> = {
-  "Bandas Machos": "Banda Macho",
-}
+const redirectMap: Record<string, string> = {}
 import cortesData from "@/data/cortes.json"
 
 const ITEMS_PER_PAGE = 20
@@ -71,6 +69,15 @@ export default function Cortes() {
   const [search, setSearch] = useState("")
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [layout, setLayout] = useState<"grid" | "horizontal">("grid")
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const cat = params.get("categoria")
+    if (cat) {
+      const cats = new Set(cortesData.map((item) => item.Category))
+      if (cats.has(cat)) setActiveCategory(cat)
+    }
+  }, [])
 
   const allImages = useMemo(() => {
     return cortesData.map((item) => ({

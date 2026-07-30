@@ -22,6 +22,7 @@ export type Empresa = {
   cortesDestacados?: string[]
   videoUrl?: string
   fotosDestacadas?: { src: string; label: string }[]
+  servicios?: string[]
 }
 
 export const empresas: Empresa[] = [
@@ -123,9 +124,18 @@ export const empresas: Empresa[] = [
     color: "from-zinc-500 to-zinc-700",
     gradient: "from-zinc-600/10 to-black/10",
     fotosDestacadas: [
-      { src: "/images/friodom/almacen-frio.svg", label: "Almacén en frío" },
-      { src: "/images/friodom/camara-frigorifica.svg", label: "Cámaras frigoríficas" },
-      { src: "/images/friodom/exportacion.svg", label: "Carga de exportación" },
+      { src: "/images/friodom/IMG_7322.jpeg", label: "Almacén Fríodom" },
+      { src: "/images/friodom/IMG_7323.jpeg", label: "Cámaras frigoríficas" },
+      { src: "/images/friodom/IMG_7324.jpeg", label: "Infraestructura SMART MG WAREHOUSE" },
+      { src: "/images/friodom/Almacen Friodom.webp", label: "Instalaciones Fríodom" },
+    ],
+    servicios: [
+      "Almacenamiento",
+      "Conservación",
+      "Carga de contenedores para exportación",
+      "Consolidación internacional",
+      "Cadena de frío",
+      "Plataforma SMART MG WAREHOUSE",
     ],
     palette: {
       primary: "#0e7490",
@@ -153,6 +163,7 @@ export const empresas: Empresa[] = [
       { src: "/images/transporte/IMG_7059.jpeg", label: "Camión de carga" },
       { src: "/images/transporte/IMG_7069.jpeg", label: "Flota Cami Dominicana" },
       { src: "/images/transporte/IMG_7070.jpeg", label: "Unidad refrigerada" },
+      { src: "/images/transporte/Unidad de carga.png", label: "Unidad de carga" },
     ],
     palette: {
       primary: "#4d7c0f",
@@ -177,7 +188,6 @@ export const cadenaValor = [
 export const estadisticas = [
   { valor: 5, sufijo: "", label: "Empresas del Grupo", descripcion: "Empresas integradas verticalmente" },
   { valor: 10, sufijo: "+", label: "Años de Experiencia", descripcion: "Trayectoria y crecimiento sostenido", },
-  { valor: 250, sufijo: "+", label: "Colaboradores", descripcion: "Talento humano comprometido", },
 ]
 
 export const valoresCalidad = [

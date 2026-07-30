@@ -2,11 +2,11 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Building2, Clock, Users } from "lucide-react"
+import { Building2, Clock } from "lucide-react"
 import { estadisticas } from "@/data/empresas"
 import SectionWrapper from "./SectionWrapper"
 
-const iconMap = [Building2, Clock, Users]
+const iconMap = [Building2, Clock]
 
 function ContadorAnimado({ valor, sufijo }: { valor: number; sufijo: string }) {
   return (
@@ -24,7 +24,7 @@ export default function Estadisticas() {
   return (
     <SectionWrapper className="py-20 md:py-24 bg-zinc-900">
       <div ref={ref} className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-12">
           {estadisticas.map((stat, index) => {
             const Icon = iconMap[index]
             return (

@@ -56,7 +56,7 @@ export default function VideoSection() {
               <video
                 ref={videoRef}
                 className="aspect-video w-full object-cover"
-                poster="/images/video-poster.webp?v=3"
+                poster="/images/video-poster.webp"
                 controls={playing}
                 onError={() => setError(true)}
                 onPlay={() => setPlaying(true)}
@@ -70,7 +70,7 @@ export default function VideoSection() {
 
               {!playing && (
                 <img
-                  src="/images/video-poster.webp?v=3"
+                  src="/images/video-poster.webp"
                   alt=""
                   className="absolute inset-0 w-full h-full object-contain pointer-events-none"
                 />

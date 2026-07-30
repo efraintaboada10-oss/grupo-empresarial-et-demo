@@ -27,37 +27,27 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
-        scrolled
-          ? "bg-zinc-950/80 backdrop-blur-xl shadow-lg shadow-black/10"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out bg-zinc-950/40 backdrop-blur-md`}
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4 lg:px-8">
         <a href="/" className="flex items-center gap-3 group">
           <img
-            src="/logo-full.webp?v=3"
+            src="/logo-full.webp"
             alt="Grupo Empresarial ET"
              className="h-14 w-auto transition-all duration-300 group-hover:brightness-110 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.15)]"
           />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8 ml-12">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-zinc-400 hover:text-white transition-colors duration-200 font-serif"
+              className="text-sm text-zinc-300 hover:text-white transition-colors duration-200 font-serif"
             >
               {link.label}
             </a>
           ))}
-          <a
-            href="/#contacto"
-            className="inline-flex h-9 items-center justify-center rounded-full bg-white px-5 text-sm font-medium text-zinc-900 hover:bg-zinc-200 transition-all duration-200 font-serif"
-          >
-            Contactar
-          </a>
         </nav>
 
         <button
@@ -89,13 +79,6 @@ export default function Header() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/#contacto"
-                onClick={() => setMobileOpen(false)}
-                className="mt-2 inline-flex h-10 items-center justify-center rounded-full bg-white px-5 text-sm font-medium text-zinc-900 hover:bg-zinc-200 transition-all duration-200 font-serif"
-              >
-                Contactar
-              </a>
             </nav>
           </motion.div>
         )}

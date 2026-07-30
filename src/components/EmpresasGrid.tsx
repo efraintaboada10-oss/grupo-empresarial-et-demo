@@ -9,11 +9,11 @@ import cortesData from "@/data/cortes.json"
 import SectionWrapper, { SectionTitle } from "./SectionWrapper"
 
 const logos: Record<string, string> = {
-  cami: "/images/Logo Cami Dominicana.webp?v=3",
-  "taboada-ganadera": "/images/Logo Taboada Soluciones Ganaderas.webp?v=3",
-  "taboada-carnicos": "/images/Logo Taboada Productos Carnicos.webp?v=3",
-  friodom: "/images/Logo Friodom.webp?v=3",
-  "transporte-palmar": "/images/Logo Transporte El Palmar.webp?v=3",
+  cami: "/images/Logo Cami Dominicana.webp",
+  "taboada-ganadera": "/images/Logo Taboada Soluciones Ganaderas.webp",
+  "taboada-carnicos": "/images/Logo Taboada Productos Carnicos.webp",
+  friodom: "/images/Logo Friodom.webp",
+  "transporte-palmar": "/images/Logo Transporte El Palmar.webp",
 }
 
 export default function EmpresasGrid() {
@@ -34,7 +34,7 @@ export default function EmpresasGrid() {
   }, [])
 
   const Card = ({ empresa, idx, startDelay }: { empresa: typeof empresas[0]; idx: number; startDelay: number }) => {
-    const logoSrc = logos[empresa.id] || "/logo-full.webp?v=3"
+    const logoSrc = logos[empresa.id] || "/logo-full.webp"
     return (
       <motion.button
         onClick={() => setSelected(empresa)}
@@ -122,14 +122,14 @@ export default function EmpresasGrid() {
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border ${selected.palette.border} bg-white p-3 shadow-sm`}>
                     <img
-                      src={logos[selected.id] || "/logo-full.webp?v=3"}
+                      src={logos[selected.id] || "/logo-full.webp"}
                       alt={selected.nombre}
                       className="h-full w-full object-contain"
                     />
                   </div>
                   <div>
                     <h3 className={`text-xl font-semibold ${selected.palette.text} font-serif`}>{selected.nombre}</h3>
-                    <span className={`text-xs font-medium ${selected.palette.textMuted} uppercase tracking-wider`}>{selected.sector}</span>
+                    <span className={`text-xs font-medium uppercase tracking-wider ${selected.id === "taboada-carnicos" ? "text-red-600" : selected.palette.textMuted}`}>{selected.sector}</span>
                   </div>
                 </div>
 
@@ -148,14 +148,9 @@ export default function EmpresasGrid() {
                         controls
                         preload="metadata"
                         playsInline
-                        onTimeUpdate={(e) => {
-                          if (e.currentTarget.currentTime >= 58) e.currentTarget.pause()
-                        }}
-                        onSeeked={(e) => {
-                          if (e.currentTarget.currentTime > 58) e.currentTarget.currentTime = 58
-                        }}
+                        poster={logos[selected.id] || "/images/video-poster.webp"}
                       >
-                        <source src={`${selected.videoUrl}#t=0,58`} type="video/mp4" />
+                        <source src={selected.videoUrl} type="video/mp4" />
                       </video>
                     </div>
                   </div>
@@ -165,7 +160,7 @@ export default function EmpresasGrid() {
                   <div className={`mt-6 border-t ${selected.palette.border} pt-6`}>
                     <div className="flex items-center justify-between mb-3">
                       <h4 className={`text-xs font-semibold ${selected.palette.text} uppercase tracking-wider`}>
-                        {selected.id === "taboada-ganadera" ? "Ejemplares Destacados" : selected.id === "taboada-carnicos" ? "Productos Importados" : selected.id === "transporte-palmar" ? "Nuestra Flota" : selected.id === "friodom" ? "Servicios" : "Fotos Destacadas"}
+                        {selected.id === "taboada-ganadera" ? "Ejemplares Destacados" : selected.id === "taboada-carnicos" ? "Productos Importados" : selected.id === "transporte-palmar" ? "Nuestra Flota" : selected.id === "friodom" ? "Fotos Almacén" : "Fotos Destacadas"}
                       </h4>
                       {selected.id === "taboada-carnicos" && (
                         <a
@@ -202,6 +197,20 @@ export default function EmpresasGrid() {
                         )
                       })}
                     </div>
+                  </div>
+                )}
+
+                {selected.servicios && selected.servicios.length > 0 && (
+                  <div className={`mt-6 border-t ${selected.palette.border} pt-6`}>
+                    <h4 className={`text-xs font-semibold ${selected.palette.text} uppercase tracking-wider mb-3`}>Servicios</h4>
+                    <ul className="space-y-2">
+                      {selected.servicios.map((s) => (
+                        <li key={s} className="flex items-center gap-2 text-sm text-zinc-600">
+                          <span className="h-1.5 w-1.5 rounded-full bg-zinc-400 shrink-0" />
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
 

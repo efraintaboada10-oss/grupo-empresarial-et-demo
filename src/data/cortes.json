@@ -56,20 +56,6 @@
         "imported":  false
     },
     {
-        "Name":  "Banda Macho Producida",
-        "File":  "corte-14.webp",
-        "Category":  "Cortes",
-        "Description":  "Procesado para máxima terneza, excelente para desmechar y preparaciones jugosas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Bandas Machos",
-        "File":  "corte-15.webp",
-        "Category":  "Cortes",
-        "Description":  "Porción de banda de macho lista para cocinar, tradicional para asados.",
-        "imported":  false
-    },
-    {
         "Name":  "BM 70-30",
         "File":  "corte-16.webp",
         "Category":  "Cortes sin Hueso (SH)",
@@ -84,7 +70,7 @@
         "imported":  false
     },
     {
-        "Name":  "BM 90-10",
+        "Name":  "BM Moler 90-10",
         "File":  "corte-18.webp",
         "Category":  "Cortes sin Hueso (SH)",
         "Description":  "Carne molida extra magra 90/10, ideal para dietas saludables y preparaciones bajas en grasa.",
@@ -158,20 +144,6 @@
         "File":  "corte-39.webp",
         "Category":  "Cortes",
         "Description":  "Corte de lomo de máxima terneza, reconocido como uno de los más suaves y versátiles.",
-        "imported":  false
-    },
-    {
-        "Name":  "Filete Premium (Canasto)",
-        "File":  "corte-41.webp",
-        "Category":  "Cortes",
-        "Description":  "Filete de primera calidad en presentación canasto, para ocasiones especiales.",
-        "imported":  false
-    },
-    {
-        "Name":  "Filete Premium (Empaque)",
-        "File":  "corte-42.webp",
-        "Category":  "Cortes",
-        "Description":  "Filete premium empacado al vacío, ideal para restaurantes y eventos.",
         "imported":  false
     },
     {
@@ -273,24 +245,10 @@
         "imported":  false
     },
     {
-        "Name":  "Picaña Nacional",
-        "File":  "corte-68.webp",
-        "Category":  "Cortes",
-        "Description":  "Picaña de producción nacional, fresca y sabrosa para asados y parrilla.",
-        "imported":  false
-    },
-    {
         "Name":  "Picaña Premium",
         "File":  "corte-69.webp",
         "Category":  "Cortes",
         "Description":  "Picaña seleccionada de primera calidad, con capa de grasa para máximo sabor.",
-        "imported":  false
-    },
-    {
-        "Name":  "Picaña",
-        "File":  "corte-70.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte triangular de la cadera, jugoso y lleno de sabor, perfecto para la parrilla.",
         "imported":  false
     },
     {
@@ -329,31 +287,10 @@
         "imported":  false
     },
     {
-        "Name":  "Ribeye CH Frontal",
-        "File":  "corte-88.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Ribeye con hueso, máximo sabor y jugosidad para asados y parrilla.",
-        "imported":  false
-    },
-    {
         "Name":  "Ribeye CH",
         "File":  "corte-89.webp",
         "Category":  "Cortes con Hueso (CH)",
         "Description":  "Ribeye con hueso, máximo sabor y jugosidad para asados y parrilla.",
-        "imported":  false
-    },
-    {
-        "Name":  "Ribeye SH Empacado",
-        "File":  "corte-90.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Ribeye deshuesado empacado, fácil de porcionar y almacenar.",
-        "imported":  false
-    },
-    {
-        "Name":  "Ribeye SH Frontal",
-        "File":  "corte-91.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Ribeye deshuesado, ideal para filetes a la parrilla o plancha.",
         "imported":  false
     },
     {
@@ -466,13 +403,6 @@
         "File":  "corte-111.webp",
         "Category":  "Cortes",
         "Description":  "Carne de ternero joven, de textura delicada y sabor suave.",
-        "imported":  false
-    },
-    {
-        "Name":  "Terneros",
-        "File":  "corte-113.webp",
-        "Category":  "Cortes",
-        "Description":  "Porción de ternero seleccionado, tierno y versátil para toda preparación.",
         "imported":  false
     },
     {
