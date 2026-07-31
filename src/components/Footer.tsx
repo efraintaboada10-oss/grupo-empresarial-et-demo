@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
               <img
-                src="/logo-full.webp?v=3"
+                src="/logo-full.webp"
                 alt="Grupo Empresarial ET"
                 className="h-16 w-auto brightness-110"
               />
@@ -44,7 +44,15 @@ export default function Footer() {
               <ul className="space-y-3">
                 {empresas.map((emp) => (
                   <li key={emp.id}>
-                    <span className="text-sm text-zinc-500">{emp.nombre}</span>
+                    <button
+                      onClick={() => {
+                        window.dispatchEvent(new CustomEvent("openEmpresa", { detail: emp.id }))
+                        document.getElementById("empresas")?.scrollIntoView({ behavior: "smooth" })
+                      }}
+                      className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200 text-left"
+                    >
+                      {emp.nombre}
+                    </button>
                   </li>
                 ))}
               </ul>

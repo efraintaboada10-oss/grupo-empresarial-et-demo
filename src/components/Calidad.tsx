@@ -1,8 +1,8 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion } from "framer-motion"
 import { BadgeCheck, ShieldCheck, Leaf, SearchCheck, Globe2, TrendingUp } from "lucide-react"
+import { curtain, fadeUp } from "@/lib/animations"
 import { valoresCalidad } from "@/data/empresas"
 import SectionWrapper, { SectionTitle } from "./SectionWrapper"
 
@@ -16,22 +16,21 @@ const iconMap: Record<string, React.ElementType> = {
 }
 
 export default function Calidad() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
-
   return (
     <SectionWrapper id="calidad">
       <SectionTitle label="Compromiso" title="Calidad e Inocuidad" />
 
-      <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {valoresCalidad.map((item, index) => {
           const Icon = iconMap[item.icono] || BadgeCheck
           return (
             <motion.div
               key={item.titulo}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+              variants={curtain}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-40px" }}
+              custom={index}
               className="group rounded-xl border border-zinc-100 bg-zinc-50/50 p-6 transition-all duration-300 hover:border-zinc-300 hover:shadow-lg hover:shadow-zinc-200/40 hover:bg-zinc-100/30"
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-200 text-zinc-700 group-hover:bg-[var(--accent)]/10 group-hover:text-[var(--accent)] transition-colors duration-300">
@@ -45,9 +44,11 @@ export default function Calidad() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-40px" }}
+        custom={1}
         className="mt-16 rounded-2xl border border-zinc-200 bg-zinc-50/50 p-8 md:p-12 text-center relative"
         style={{ boxShadow: "0 0 0 1px var(--accent-dim)" }}
       >

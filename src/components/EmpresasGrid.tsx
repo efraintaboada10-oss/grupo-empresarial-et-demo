@@ -1,8 +1,9 @@
 "use client"
 
-import { useState, useRef, useMemo } from "react"
-import { motion, AnimatePresence, useInView } from "framer-motion"
+import { useState, useMemo, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { X, MapPin, Phone, Mail, ChevronRight, ZoomIn } from "lucide-react"
+import { curtain } from "@/lib/animations"
 
 import { empresas } from "@/data/empresas"
 import cortesData from "@/data/cortes.json"
@@ -17,10 +18,18 @@ const logos: Record<string, string> = {
 }
 
 export default function EmpresasGrid() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
   const [selected, setSelected] = useState<typeof empresas[0] | null>(null)
   const [zoomedCorte, setZoomedCorte] = useState<{ name: string; file: string } | null>(null)
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const id = (e as CustomEvent).detail
+      const emp = empresas.find((e) => e.id === id)
+      if (emp) setSelected(emp)
+    }
+    window.addEventListener("openEmpresa", handler)
+    return () => window.removeEventListener("openEmpresa", handler)
+  }, [])
 
   const first3 = empresas.slice(0, 3)
   const last2 = empresas.slice(3)
@@ -38,9 +47,11 @@ export default function EmpresasGrid() {
     return (
       <motion.button
         onClick={() => setSelected(empresa)}
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-        animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: (startDelay + idx) * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+        variants={curtain}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-40px" }}
+        custom={startDelay + idx}
         className="group relative rounded-2xl border border-zinc-200 bg-white transition-all duration-500 hover:border-zinc-300 hover:shadow-2xl hover:shadow-zinc-200/50 overflow-hidden text-left w-full"
       >
         <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${empresa.gradient}`} />
@@ -71,7 +82,7 @@ export default function EmpresasGrid() {
       <SectionWrapper id="empresas">
         <SectionTitle label="Nuestras Empresas" title="Empresas del Grupo" />
 
-        <div ref={ref} className="space-y-6">
+        <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {first3.map((empresa, idx) => (
               <Card key={empresa.id} empresa={empresa} idx={idx} startDelay={0} />

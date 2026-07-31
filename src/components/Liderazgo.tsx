@@ -1,8 +1,8 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion } from "framer-motion"
 import { Award, Target, Heart } from "lucide-react"
+import { curtain, fadeUp } from "@/lib/animations"
 import SectionWrapper, { SectionTitle } from "./SectionWrapper"
 
 const lideres = [
@@ -40,24 +40,24 @@ const valores = [
 ]
 
 export default function Liderazgo() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
-
   return (
     <SectionWrapper id="liderazgo">
       <SectionTitle label="Liderazgo" title="Equipo Directivo" />
 
-      <div ref={ref} className="space-y-16">
+      <div className="space-y-16">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-40px" }}
           className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+            variants={curtain}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-40px" }}
+            custom={1}
             className="lg:col-span-2"
           >
             <div className="aspect-[4/5] w-full rounded-2xl bg-zinc-100 overflow-hidden">
@@ -74,9 +74,11 @@ export default function Liderazgo() {
             {lideres.map((lider, idx) => (
               <motion.div
                 key={lider.nombre}
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 + idx * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-40px" }}
+                custom={idx}
               >
                 <h3 className="text-xl font-bold text-zinc-900">{lider.nombre}</h3>
                 <p className="text-sm font-medium text-zinc-400 mt-0.5">{lider.cargo}</p>
@@ -87,9 +89,11 @@ export default function Liderazgo() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-40px" }}
+          custom={2}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"
         >
           {valores.map((item) => {

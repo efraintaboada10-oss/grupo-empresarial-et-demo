@@ -1,13 +1,12 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion } from "framer-motion"
 import { Play, Download, FileVideo } from "lucide-react"
+import { curtain, fadeUp } from "@/lib/animations"
 import SectionWrapper, { SectionTitle } from "./SectionWrapper"
 
 export default function VideoSection() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
   const [playing, setPlaying] = useState(false)
   const [error, setError] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -27,11 +26,12 @@ export default function VideoSection() {
         dark
       />
 
-      <div ref={ref} className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, scale: 0.97, y: 20 }}
-          animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          variants={curtain}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-40px" }}
           className="relative overflow-hidden rounded-2xl border border-white/5 bg-black shadow-2xl"
         >
           {error ? (
@@ -91,9 +91,11 @@ export default function VideoSection() {
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-40px" }}
+          custom={1}
           className="mt-6 text-center text-sm text-zinc-500"
         >
           Video de presentación corporativa - Grupo Empresarial ET

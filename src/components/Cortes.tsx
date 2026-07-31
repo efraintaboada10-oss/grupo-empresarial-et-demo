@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, ChevronDown, ArrowLeft, Search, LayoutGrid, Columns2, ChevronLeft, ChevronRight, Send } from "lucide-react"
+import { curtain } from "@/lib/animations"
 
 const redirectMap: Record<string, string> = {}
 import cortesData from "@/data/cortes.json"
@@ -20,7 +21,20 @@ const categoryOrder = [
   "Vísceras Importadas",
 ]
 
-function ImageCard({ src, alt, onClick }: { src: string; alt: string; onClick: () => void }) {
+const NOGAL_FILES = new Set([
+  "corte-2.webp", "corte-5.webp", "corte-6.webp", "corte-7.webp", "corte-9.webp",
+  "corte-10.webp", "corte-16.webp", "corte-17.webp", "corte-18.webp", "corte-19.webp",
+  "corte-21.webp", "corte-23.webp", "corte-25.webp", "corte-27.webp", "corte-31.webp",
+  "corte-33.webp", "corte-35.webp", "corte-37.webp", "corte-39.webp", "corte-43.webp",
+  "corte-45.webp", "corte-46.webp", "corte-47.webp", "corte-48.webp", "corte-52.webp",
+  "corte-54.webp", "corte-55.webp", "corte-60.webp", "corte-62.webp", "corte-63.webp",
+  "corte-64.webp", "corte-66.webp", "corte-69.webp", "corte-71.webp", "corte-73.webp",
+  "corte-76.webp", "corte-79.webp", "corte-89.webp", "corte-92.webp", "corte-93.webp",
+  "corte-95.webp", "corte-97.webp", "corte-99.webp", "corte-100.webp", "corte-110.webp",
+  "corte-111.webp",
+])
+
+function ImageCard({ src, alt, onClick, showLabel = true }: { src: string; alt: string; onClick: () => void; showLabel?: boolean }) {
   const imgRef = useRef<HTMLImageElement>(null)
   const [loaded, setLoaded] = useState(false)
   const [failed, setFailed] = useState(false)
@@ -55,9 +69,11 @@ function ImageCard({ src, alt, onClick }: { src: string; alt: string; onClick: (
         )}
       </div>
       <div className="px-3 py-2.5 bg-white border-t border-zinc-100 flex-1 flex flex-col justify-center gap-0.5">
-        <p className="text-xs font-medium text-zinc-700 leading-tight line-clamp-2">
-          {alt}
-        </p>
+        {showLabel && (
+          <p className="text-xs font-medium text-zinc-700 leading-tight line-clamp-2">
+            {alt}
+          </p>
+        )}
       </div>
     </button>
   )
@@ -69,6 +85,7 @@ export default function Cortes() {
   const [search, setSearch] = useState("")
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [layout, setLayout] = useState<"grid" | "horizontal">("grid")
+  const [tab, setTab] = useState<"galeria" | "catalogo">("galeria")
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -79,6 +96,11 @@ export default function Cortes() {
     }
   }, [])
 
+  const sourceItems = useMemo(() => {
+    if (tab === "galeria") return cortesData.filter((item) => NOGAL_FILES.has(item.File))
+    return cortesData
+  }, [tab])
+
   const allImages = useMemo(() => {
     return cortesData.map((item) => ({
       src: `/images/cortes/${item.File}`,
@@ -88,19 +110,19 @@ export default function Cortes() {
   }, [])
 
   const categories = useMemo(() => {
-    const cats = new Set(cortesData.map((item) => item.Category))
+    const cats = new Set(sourceItems.map((item) => item.Category))
     return ["Todas", ...categoryOrder.filter((c) => cats.has(c))]
-  }, [])
+  }, [sourceItems])
 
   const filtered = useMemo(() => {
-    let result = cortesData
-    if (activeCategory !== "Todas") result = result.filter((item) => item.Category === activeCategory)
+    let result = sourceItems
+    if (activeCategory !== "Todas" && tab === "catalogo") result = result.filter((item) => item.Category === activeCategory)
     if (search.trim()) {
       const q = search.toLowerCase()
       result = result.filter((item) => item.Name.toLowerCase().includes(q))
     }
     return result
-  }, [activeCategory, search])
+  }, [sourceItems, activeCategory, search])
 
   const visible = useMemo(() => filtered.slice(0, visibleCount), [filtered, visibleCount])
   const hasMore = visibleCount < filtered.length
@@ -118,6 +140,12 @@ export default function Cortes() {
     setSearch(e.target.value)
     setVisibleCount(ITEMS_PER_PAGE)
     setActiveCategory("Todas")
+  }, [])
+
+  const handleTabChange = useCallback((next: "galeria" | "catalogo") => {
+    setTab(next)
+    setSelectedIndex(null)
+    setVisibleCount(ITEMS_PER_PAGE)
   }, [])
 
   const allCortes = useMemo(() => {
@@ -218,23 +246,66 @@ export default function Cortes() {
             Nuestros Productos
           </h2>
           <p className="subtitle font-serif mx-auto mt-4 max-w-2xl text-base text-zinc-500">
-            Explora nuestra amplia variedad de cortes de carne de res, seleccionados para ofrecer la mejor calidad.
+            Explora nuestra galería de cortes seleccionados y consulta el catálogo para cotizar cada corte exacto.
           </p>
         </div>
 
-        <div className="relative mx-auto mb-6 max-w-md">
-          <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" />
-          <input
-            type="text"
-            value={search}
-            onChange={handleSearchChange}
-            placeholder="Buscar corte por nombre..."
-            className="w-full rounded-full border border-zinc-200 bg-white py-2.5 pl-10 pr-4 text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:border-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-100"
-          />
+        <div className="mb-8 flex justify-center">
+          <div className="inline-flex items-center gap-1 rounded-full border border-zinc-200 bg-zinc-50 p-1">
+            <button
+              onClick={() => handleTabChange("galeria")}
+              className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${
+                tab === "galeria"
+                  ? "bg-zinc-900 text-white shadow-md"
+                  : "text-zinc-600 hover:text-zinc-900"
+              }`}
+            >
+              Galería
+            </button>
+            <button
+              onClick={() => handleTabChange("catalogo")}
+              className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${
+                tab === "catalogo"
+                  ? "bg-zinc-900 text-white shadow-md"
+                  : "text-zinc-600 hover:text-zinc-900"
+              }`}
+            >
+              Catálogo
+              <span className="ml-1.5 text-[10px] opacity-60">
+                ({cortesData.length})
+              </span>
+            </button>
+          </div>
         </div>
 
+        {tab === "galeria" && (
+          <p className="-mt-4 mb-8 text-center text-sm text-zinc-500">
+            ¿Quieres cotizar?{" "}
+            <button
+              onClick={() => handleTabChange("catalogo")}
+              className="font-medium text-[var(--accent)] hover:underline"
+            >
+              Consulta el catálogo con los nombres exactos de cada corte
+            </button>
+          </p>
+        )}
+
+        {tab === "catalogo" && (
+          <div className="relative mx-auto mb-6 max-w-md">
+            <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" />
+            <input
+              type="text"
+              value={search}
+              onChange={handleSearchChange}
+              placeholder="Buscar corte por nombre..."
+              className="w-full rounded-full border border-zinc-200 bg-white py-2.5 pl-10 pr-4 text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:border-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-100"
+            />
+          </div>
+        )}
+
         <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
-          <div className="flex flex-wrap justify-center gap-2">
+          {tab === "catalogo" && (
+            <div className="flex flex-wrap justify-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -253,7 +324,8 @@ export default function Cortes() {
                 )}
               </button>
             ))}
-          </div>
+            </div>
+          )}
           <div className="flex items-center gap-1 rounded-lg border border-zinc-200 p-0.5">
             <button
               onClick={() => setLayout("grid")}
@@ -281,24 +353,23 @@ export default function Cortes() {
         </div>
 
         {layout === "grid" ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {visible.map((item, idx) => {
               const globalIdx = filtered.indexOf(item)
               return (
                 <motion.div
                   key={item.File}
                   layout
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: Math.min(idx * 0.015, 0.5),
-                    ease: [0.25, 0.1, 0.25, 1],
-                  }}
+                  variants={curtain}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-30px" }}
+                  custom={idx}
                 >
                   <ImageCard
-                    src={`/images/cortes/${item.File}`}
+                    src={`/images/cortes/${tab === "galeria" ? "nogal/" : ""}${item.File}`}
                     alt={item.Name}
+                    showLabel={tab === "catalogo"}
                     onClick={() => setSelectedIndex(globalIdx)}
                   />
                 </motion.div>
@@ -314,18 +385,17 @@ export default function Cortes() {
                   <motion.div
                     key={item.File}
                     layout
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: Math.min(idx * 0.015, 0.5),
-                      ease: [0.25, 0.1, 0.25, 1],
-                    }}
-                    className="flex-shrink-0 w-48 sm:w-56"
+                    variants={curtain}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: "-30px" }}
+                    custom={idx}
+                    className="flex-shrink-0 w-56 sm:w-64"
                   >
                     <ImageCard
-                      src={`/images/cortes/${item.File}`}
+                      src={`/images/cortes/${tab === "galeria" ? "nogal/" : ""}${item.File}`}
                       alt={item.Name}
+                      showLabel={tab === "catalogo"}
                       onClick={() => setSelectedIndex(globalIdx)}
                     />
                   </motion.div>
@@ -408,11 +478,12 @@ export default function Cortes() {
               className="relative flex flex-col items-center max-w-full max-h-full"
             >
               <img
-                src={`/images/cortes/${filtered[selectedIndex].File}`}
+                src={`/images/cortes/${tab === "galeria" ? "nogal/" : ""}${filtered[selectedIndex].File}`}
                 alt={filtered[selectedIndex].Name}
                 className="max-h-[70vh] w-auto max-w-full rounded-lg shadow-2xl object-contain"
               />
-              <div className="mt-4 text-center">
+              {tab === "catalogo" && (
+                <div className="mt-4 text-center">
                 <p className="text-base font-medium text-white">
                   {filtered[selectedIndex].Name}
                 </p>
@@ -432,7 +503,8 @@ export default function Cortes() {
                 >
                   Pedir Cotización
                 </button>
-              </div>
+                </div>
+              )}
             </motion.div>
           </motion.div>
         )}

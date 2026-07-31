@@ -49,13 +49,6 @@
         "imported":  false
     },
     {
-        "Name":  "Banda de Macho",
-        "File":  "corte-12.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte muscular lleno de sabor, ideal para brasas, asados y cocción lenta.",
-        "imported":  false
-    },
-    {
         "Name":  "BM 70-30",
         "File":  "corte-16.webp",
         "Category":  "Cortes sin Hueso (SH)",
@@ -203,13 +196,6 @@
         "imported":  false
     },
     {
-        "Name":  "Ossobuco SH",
-        "File":  "corte-58.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Corte de pierna deshuesado, versátil para guisos y plancha.",
-        "imported":  false
-    },
-    {
         "Name":  "Paleta CH",
         "File":  "corte-60.webp",
         "Category":  "Cortes con Hueso (CH)",
@@ -277,13 +263,6 @@
         "File":  "corte-79.webp",
         "Category":  "Cortes",
         "Description":  "Recorte de filete miñon, ideal para cocción lenta, guisos y preparaciones caseras.",
-        "imported":  false
-    },
-    {
-        "Name":  "Ribeye (Rotí)",
-        "File":  "corte-86.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte de gran terneza y sabor, reconocido por su excelente marmoleo.",
         "imported":  false
     },
     {

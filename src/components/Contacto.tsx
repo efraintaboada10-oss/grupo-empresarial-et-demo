@@ -1,8 +1,9 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { motion, useInView } from "framer-motion"
+import { useState } from "react"
+import { motion } from "framer-motion"
 import { MapPin, Phone, Mail, Send, Sparkles, Check } from "lucide-react"
+import { fadeUp } from "@/lib/animations"
 import { contactoInfo } from "@/data/empresas"
 import SectionWrapper, { SectionTitle } from "./SectionWrapper"
 
@@ -29,8 +30,6 @@ const labelBase = [
 ].join(" ")
 
 export default function Contacto() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
   const [submitted, setSubmitted] = useState(false)
   const [focused, setFocused] = useState<string | null>(null)
 
@@ -57,11 +56,12 @@ export default function Contacto() {
       <div className="relative z-10">
         <SectionTitle label="Contacto" title="Hablemos" dark />
 
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-40px" }}
             className="lg:col-span-3"
           >
             <div className="rounded-2xl border border-white/5 bg-white/[0.03] backdrop-blur-sm p-8 md:p-10">
@@ -150,9 +150,11 @@ export default function Contacto() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-40px" }}
+            custom={1}
             className="lg:col-span-2 space-y-8"
           >
             <div className="space-y-6">
