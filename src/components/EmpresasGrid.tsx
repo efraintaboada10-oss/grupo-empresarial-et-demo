@@ -277,13 +277,13 @@ export default function EmpresasGrid() {
                   {selected.telefono && (
                     <div className="flex items-center gap-3 text-sm text-zinc-500">
                       <Phone size={16} className={`shrink-0 ${selected.palette.text}`} />
-                      <a href={`tel:${selected.telefono}`} className={`hover:${selected.palette.text} transition-colors`}>{selected.telefono}</a>
+                      <a href={`tel:${selected.telefono}`} className="hover:underline hover:opacity-75 transition-all">{selected.telefono}</a>
                     </div>
                   )}
                   {selected.email && (
                     <div className="flex items-center gap-3 text-sm text-zinc-500">
                       <Mail size={16} className={`shrink-0 ${selected.palette.text}`} />
-                      <a href={`mailto:${selected.email}`} className={`hover:${selected.palette.text} transition-colors`}>{selected.email}</a>
+                      <a href={`mailto:${selected.email}`} className="hover:underline hover:opacity-75 transition-all">{selected.email}</a>
                     </div>
                   )}
                 </div>

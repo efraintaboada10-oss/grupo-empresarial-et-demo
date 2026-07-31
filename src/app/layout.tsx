@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Grupo Empresarial ET" }],
   creator: "Grupo Empresarial ET",
   publisher: "Grupo Empresarial ET",
-  metadataBase: new URL("https://grupoet.com.do"),
+  metadataBase: new URL("https://grupoempresarialet.com"),
   openGraph: {
     type: "website",
     locale: "es_DO",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Grupo Empresarial ET | Líder en la Industria Cárnica de República Dominicana",
     description:
       "Conglomerado dominicano integrado por empresas líderes en ganadería, procesamiento cárnico, refrigeración, logística y comercialización.",
-    url: "https://grupoet.com.do",
+    url: "https://grupoempresarialet.com",
     images: [
       {
         url: "/og-image.jpg",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logo-full.webp",
+    icon: "/favicon.webp",
     apple: "/logo-full.webp",
   },
 }
@@ -87,8 +87,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Grupo Empresarial ET",
-  url: "https://grupoet.com.do",
-  logo: "https://grupoet.com.do/logo-full.webp",
+  url: "https://grupoempresarialet.com",
+  logo: "https://grupoempresarialet.com/logo-full.webp",
   description:
     "Conglomerado dominicano integrado por empresas líderes en ganadería, procesamiento cárnico, refrigeración, logística y comercialización de productos cárnicos.",
   foundingDate: "2018",

@@ -166,16 +166,17 @@ export default function Cortes() {
     mensaje: string
     enviando: boolean
     enviado: boolean
+    error: string
     cortes: string[]
-  }>({ nombre: "", email: "", mensaje: "", enviando: false, enviado: false, cortes: [] })
+  }>({ nombre: "", email: "", mensaje: "", enviando: false, enviado: false, error: "", cortes: [] })
 
   const resetCotizar = useCallback(() => {
-    setCotizar({ nombre: "", email: "", mensaje: "", enviando: false, enviado: false, cortes: [] })
+    setCotizar({ nombre: "", email: "", mensaje: "", enviando: false, enviado: false, error: "", cortes: [] })
   }, [])
 
   const handleCotizarSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setCotizar((p) => ({ ...p, enviando: true }))
+    setCotizar((p) => ({ ...p, enviando: true, error: "" }))
     const data = new FormData()
     data.append("nombre", cotizar.nombre)
     data.append("email", cotizar.email)
@@ -188,9 +189,9 @@ export default function Cortes() {
         headers: { Accept: "application/json" },
       })
       if (res.ok) setCotizar((p) => ({ ...p, enviando: false, enviado: true }))
-      else setCotizar((p) => ({ ...p, enviando: false, enviado: true }))
+      else setCotizar((p) => ({ ...p, enviando: false, error: "No se pudo enviar la solicitud. Inténtelo nuevamente o escríbanos a pedidos@camidominicana.com." }))
     } catch {
-      setCotizar((p) => ({ ...p, enviando: false, enviado: true }))
+      setCotizar((p) => ({ ...p, enviando: false, error: "Error de conexión. Verifique su internet e inténtelo nuevamente." }))
     }
   }
 
@@ -556,6 +557,11 @@ export default function Cortes() {
                 </div>
               ) : (
                 <form onSubmit={handleCotizarSubmit} className="mt-6 space-y-5">
+                  {cotizar.error && (
+                    <p className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-300">
+                      {cotizar.error}
+                    </p>
+                  )}
                   <div>
                     <label className="block text-xs font-medium tracking-wider uppercase text-zinc-500 mb-1">Nombre *</label>
                     <input

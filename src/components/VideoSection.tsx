@@ -65,7 +65,6 @@ export default function VideoSection() {
                 preload="metadata"
               >
                 <source src="/assets/Video corporativo.mp4" type="video/mp4" />
-                <source src="/assets/Video para presentacion.mov" type="video/quicktime" />
               </video>
 
               {!playing && (

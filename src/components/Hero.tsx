@@ -13,7 +13,7 @@ export default function Hero() {
     >
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/hero-bg.png)" }}
+        style={{ backgroundImage: "url(/images/hero-bg.webp)" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/50 via-transparent to-zinc-950" />
 

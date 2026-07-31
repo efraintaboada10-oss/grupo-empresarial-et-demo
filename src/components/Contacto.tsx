@@ -31,12 +31,14 @@ const labelBase = [
 
 export default function Contacto() {
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState("")
   const [focused, setFocused] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const form = e.target as HTMLFormElement
     const data = new FormData(form)
+    setError("")
     try {
       const res = await fetch("https://formspree.io/f/xwvddlja", {
         method: "POST",
@@ -44,8 +46,9 @@ export default function Contacto() {
         headers: { Accept: "application/json" },
       })
       if (res.ok) setSubmitted(true)
+      else setError("No se pudo enviar el mensaje. Inténtelo nuevamente o escríbanos a pedidos@camidominicana.com.")
     } catch {
-      setSubmitted(true)
+      setError("Error de conexión. Verifique su internet e inténtelo nuevamente.")
     }
   }
 
@@ -88,6 +91,11 @@ export default function Contacto() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {error && (
+                    <p className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-300">
+                      {error}
+                    </p>
+                  )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="nombre" className={labelBase}>Nombre *</label>
