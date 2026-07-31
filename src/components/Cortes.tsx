@@ -92,7 +92,10 @@ export default function Cortes() {
     const cat = params.get("categoria")
     if (cat) {
       const cats = new Set(cortesData.map((item) => item.Category))
-      if (cats.has(cat)) setActiveCategory(cat)
+      if (cats.has(cat)) {
+        setActiveCategory(cat)
+        setTab("catalogo")
+      }
     }
   }, [])
 
