@@ -27,3 +27,10 @@ dev-server.log
 
 # Local Netlify folder
 .netlify
+
+# local monitoring log
+dev.log
+
+# image backups (not source content)
+backup_nogal_no_public/
+public/images/cortes/__backup_*/

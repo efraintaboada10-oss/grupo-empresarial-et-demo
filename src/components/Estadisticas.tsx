@@ -5,6 +5,7 @@ import { Building2, Clock } from "lucide-react"
 import { curtain } from "@/lib/animations"
 import { estadisticas } from "@/data/empresas"
 import SectionWrapper from "./SectionWrapper"
+import { useLang } from "@/i18n/LanguageProvider"
 
 const iconMap = [Building2, Clock]
 
@@ -18,12 +19,15 @@ function ContadorAnimado({ valor, sufijo }: { valor: number; sufijo: string }) {
 }
 
 export default function Estadisticas() {
+  const { t } = useLang()
+  const statKeys = ["empresas", "anos"]
   return (
     <SectionWrapper className="py-20 md:py-24 bg-zinc-900">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-12">
           {estadisticas.map((stat, index) => {
             const Icon = iconMap[index]
+            const key = statKeys[index] || "empresas"
             return (
               <motion.div
                 key={stat.label}
@@ -38,8 +42,8 @@ export default function Estadisticas() {
                   <Icon size={22} />
                 </div>
                 <ContadorAnimado valor={stat.valor} sufijo={stat.sufijo} />
-                <p className="mt-2 text-sm font-medium text-zinc-300">{stat.label}</p>
-                <p className="mt-1 text-xs text-zinc-500">{stat.descripcion}</p>
+                <p className="mt-2 text-sm font-medium text-zinc-300">{t(`estadisticas.${key}`)}</p>
+                <p className="mt-1 text-xs text-zinc-500">{t(`estadisticas.${key}Desc`)}</p>
               </motion.div>
             )
           })}

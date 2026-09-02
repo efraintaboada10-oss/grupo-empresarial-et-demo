@@ -5,6 +5,7 @@ import { Tractor, Factory, Snowflake, Truck, Globe, ShoppingCart, ChevronDown } 
 import { fadeUp } from "@/lib/animations"
 import { cadenaValor } from "@/data/empresas"
 import SectionWrapper, { SectionTitle } from "./SectionWrapper"
+import { useLang } from "@/i18n/LanguageProvider"
 
 const iconMap: Record<string, React.ElementType> = {
   tractor: Tractor,
@@ -16,16 +17,18 @@ const iconMap: Record<string, React.ElementType> = {
 }
 
 export default function CadenaValor() {
+  const { t } = useLang()
   return (
     <SectionWrapper id="cadena-valor" dark>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-950 to-zinc-950" />
 
       <div className="relative z-10">
         <SectionTitle
-          label="Integración Vertical"
-          title="Cadena de Valor"
+          label={t("cadenaValor.label")}
+          title={t("cadenaValor.title")}
           dark
         />
+
 
         <div className="space-y-6">
           {cadenaValor.map((item, index) => {
@@ -47,11 +50,11 @@ export default function CadenaValor() {
                 </div>
 
                 <span className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400 font-serif">
-                  Paso {item.paso}
+                  {t("cadenaValor.paso")} {item.paso}
                 </span>
-                <h3 className="mt-2 text-2xl font-bold text-white">{item.titulo}</h3>
+                <h3 className="mt-2 text-2xl font-bold text-white">{t(`cadenaValorSteps.${item.stepKey}`)}</h3>
                 <p className="mt-2 text-zinc-400 leading-relaxed max-w-md">
-                  {item.descripcion}
+                  {t(`cadenaValorSteps.${item.stepKey}Desc`)}
                 </p>
 
                 {!isLast && (

@@ -4,8 +4,10 @@ import { useState } from "react"
 import { ArrowUp } from "lucide-react"
 import { empresas, contactoInfo } from "@/data/empresas"
 import LegalModal from "./LegalModal"
+import { useLang } from "@/i18n/LanguageProvider"
 
 export default function Footer() {
+  const { t, lang } = useLang()
   const [legalOpen, setLegalOpen] = useState(false)
   const [legalType, setLegalType] = useState<"aviso" | "privacidad">("aviso")
 
@@ -30,16 +32,14 @@ export default function Footer() {
                 className="h-16 w-auto brightness-110"
               />
               <p className="mt-4 text-sm text-zinc-500 leading-relaxed max-w-xs">
-                Grupo empresarial dominicano integrado por compañías líderes en
-                la industria cárnica y ganadera, comprometido con la calidad,
-                innovación y el desarrollo del sector agropecuario nacional.
+                {t("footer.descripcion")}
               </p>
             </div>
 
             <div>
               <h4 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
                 <span className="h-px w-4 bg-[var(--accent)]/60" />
-                Empresas
+                {t("footer.empresas")}
               </h4>
               <ul className="space-y-3">
                 {empresas.map((emp) => (
@@ -51,7 +51,7 @@ export default function Footer() {
                       }}
                       className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200 text-left"
                     >
-                      {emp.nombre}
+                      {lang === "en" && emp.nombreEn ? emp.nombreEn : emp.nombre}
                     </button>
                   </li>
                 ))}
@@ -61,23 +61,23 @@ export default function Footer() {
             <div>
               <h4 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
                 <span className="h-px w-4 bg-[var(--accent)]/60" />
-                Secciones
+                {t("footer.secciones")}
               </h4>
               <ul className="space-y-3">
-                <li><a href="/#hero" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">Inicio</a></li>
-                <li><a href="/#cadena-valor" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">Cadena de Valor</a></li>
-                <li><a href="/#liderazgo" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">Liderazgo</a></li>
-                <li><a href="/#catalogo" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">Catálogo</a></li>
-                <li><a href="/cortes" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">Cortes</a></li>
-                <li><a href="/#calidad" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">Calidad</a></li>
-                <li><a href="/#contacto" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">Contacto</a></li>
+                <li><a href="/#hero" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">{t("nav.inicio")}</a></li>
+                <li><a href="/#cadena-valor" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">{t("nav.cadena")}</a></li>
+                <li><a href="/#liderazgo" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">{t("nav.liderazgo")}</a></li>
+                <li><a href="/#catalogo" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">{t("nav.catalogo")}</a></li>
+                <li><a href="/cortes" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">{t("nav.cortes")}</a></li>
+                <li><a href="/#calidad" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">{t("nav.calidad")}</a></li>
+                <li><a href="/#contacto" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200">{t("nav.contacto")}</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
                 <span className="h-px w-4 bg-[var(--accent)]/60" />
-                Contacto
+                {t("footer.contacto")}
               </h4>
               <ul className="space-y-3">
                 <li>
@@ -93,6 +93,12 @@ export default function Footer() {
                     {contactoInfo.email}
                   </a>
                 </li>
+                <li>
+                  <a href="https://www.instagram.com/taboadasolucionesganaderas/" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-200 inline-flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    @taboadasolucionesganaderas
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -101,22 +107,21 @@ export default function Footer() {
         <div className="border-t border-white/5">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-zinc-600">
-              &copy; {new Date().getFullYear()} Grupo Empresarial ET. Todos los
-              derechos reservados.
+              &copy; {new Date().getFullYear()} Grupo Empresarial ET. {t("footer.derechos")}
             </p>
             <div className="flex items-center gap-6 text-xs text-zinc-600">
               <button onClick={() => openLegal("aviso")} className="hover:text-zinc-400 transition-colors">
-                Aviso Legal
+                {t("footer.aviso")}
               </button>
               <button onClick={() => openLegal("privacidad")} className="hover:text-zinc-400 transition-colors">
-                Privacidad
+                {t("footer.privacidad")}
               </button>
               <button
                 onClick={scrollToTop}
                 className="flex items-center gap-1.5 text-zinc-500 hover:text-[var(--accent)] transition-colors"
               >
                 <ArrowUp size={14} />
-                Volver arriba
+                {t("footer.volverArriba")}
               </button>
             </div>
           </div>

@@ -6,6 +6,7 @@ import { MapPin, Phone, Mail, Send, Sparkles, Check } from "lucide-react"
 import { fadeUp } from "@/lib/animations"
 import { contactoInfo } from "@/data/empresas"
 import SectionWrapper, { SectionTitle } from "./SectionWrapper"
+import { useLang } from "@/i18n/LanguageProvider"
 
 const inputBase = [
   "w-full",
@@ -30,6 +31,7 @@ const labelBase = [
 ].join(" ")
 
 export default function Contacto() {
+  const { t } = useLang()
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState("")
   const [focused, setFocused] = useState<string | null>(null)
@@ -57,7 +59,7 @@ export default function Contacto() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-zinc-800/10 via-transparent to-transparent" />
 
       <div className="relative z-10">
-        <SectionTitle label="Contacto" title="Hablemos" dark />
+        <SectionTitle label={t("contacto.label")} title={t("contacto.title")} dark />
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
           <motion.div
@@ -72,7 +74,7 @@ export default function Contacto() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/10">
                   <Sparkles size={12} className="text-white" />
                 </span>
-                Envíenos un mensaje
+                {t("contacto.enviarMensaje")}
               </h3>
 
               {submitted ? (
@@ -84,9 +86,9 @@ export default function Contacto() {
                   <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-white/5 mb-6">
                     <Check size={24} className="text-white" />
                   </div>
-                  <h4 className="text-xl font-semibold text-white">Mensaje recibido</h4>
+                  <h4 className="text-xl font-semibold text-white">{t("contacto.mensajeRecibido")}</h4>
                   <p className="mt-2 text-sm text-zinc-400 max-w-xs">
-                    Gracias por contactarnos. Le responderemos a la mayor brevedad posible.
+                    {t("contacto.gracias")}
                   </p>
                 </motion.div>
               ) : (
@@ -98,7 +100,7 @@ export default function Contacto() {
                   )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="nombre" className={labelBase}>Nombre *</label>
+                      <label htmlFor="nombre" className={labelBase}>{t("contacto.nombre")}</label>
                       <input
                         id="nombre"
                         name="nombre"
@@ -107,12 +109,12 @@ export default function Contacto() {
                         onFocus={() => setFocused("nombre")}
                         onBlur={() => setFocused(null)}
                         className={inputBase}
-                        placeholder="Su nombre"
+                        placeholder={t("contacto.placeholderNombre")}
                       />
                       <div className={`h-px bg-white transition-transform duration-300 ${focused === "nombre" ? "scale-x-100" : "scale-x-0"}`} />
                     </div>
                     <div>
-                      <label htmlFor="email" className={labelBase}>Correo *</label>
+                      <label htmlFor="email" className={labelBase}>{t("contacto.correo")}</label>
                       <input
                         id="email"
                         name="email"
@@ -121,14 +123,14 @@ export default function Contacto() {
                         onFocus={() => setFocused("email")}
                         onBlur={() => setFocused(null)}
                         className={inputBase}
-                        placeholder="correo@ejemplo.com"
+                        placeholder={t("contacto.placeholderCorreo")}
                       />
                       <div className={`h-px bg-white transition-transform duration-300 ${focused === "email" ? "scale-x-100" : "scale-x-0"}`} />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="mensaje" className={labelBase}>Mensaje *</label>
+                    <label htmlFor="mensaje" className={labelBase}>{t("contacto.mensaje")}</label>
                     <textarea
                       id="mensaje"
                       name="mensaje"
@@ -137,7 +139,7 @@ export default function Contacto() {
                       onFocus={() => setFocused("mensaje")}
                       onBlur={() => setFocused(null)}
                       className={`${inputBase} resize-none`}
-                      placeholder="¿Cómo podemos ayudarle?"
+                      placeholder={t("contacto.placeholderMensaje")}
                     />
                     <div className={`h-px bg-white transition-transform duration-300 ${focused === "mensaje" ? "scale-x-100" : "scale-x-0"}`} />
                   </div>
@@ -149,7 +151,7 @@ export default function Contacto() {
                     <span className="absolute inset-0 rounded-full bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                     <span className="relative z-10 flex items-center gap-2">
                       <Send size={14} />
-                      Enviar mensaje
+                      {t("contacto.enviar")}
                     </span>
                   </button>
                 </form>
@@ -167,7 +169,7 @@ export default function Contacto() {
           >
             <div className="space-y-6">
               <h3 className="text-sm font-semibold tracking-wider uppercase text-zinc-400">
-                Información de Contacto
+                {t("contacto.infoContacto")}
               </h3>
 
               <div className="space-y-5">
@@ -176,7 +178,7 @@ export default function Contacto() {
                     <MapPin size={15} />
                   </div>
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Dirección</p>
+                    <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">{t("contacto.direccion")}</p>
                     <p className="mt-1 text-sm text-zinc-300 leading-relaxed">{contactoInfo.direccion}</p>
                   </div>
                 </div>
@@ -186,7 +188,7 @@ export default function Contacto() {
                     <Phone size={15} />
                   </div>
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Teléfono</p>
+                    <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">{t("contacto.telefono")}</p>
                     <p className="mt-1 text-sm text-zinc-300">{contactoInfo.telefono}</p>
                   </div>
                 </div>
@@ -196,7 +198,7 @@ export default function Contacto() {
                     <Mail size={15} />
                   </div>
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Correo</p>
+                    <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">{t("contacto.correoLabel")}</p>
                     <p className="mt-1 text-sm text-zinc-300">{contactoInfo.email}</p>
                   </div>
                 </div>

@@ -3,6 +3,7 @@
 import { useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
+import { useLang } from "@/i18n/LanguageProvider"
 
 const legalContent = {
   aviso: {
@@ -51,9 +52,57 @@ EL GRUPO se reserva el derecho de modificar la presente política de privacidad 
   },
 }
 
+const legalContentEn = {
+  aviso: {
+    titulo: "Legal Notice",
+    contenido: `This Legal Notice governs the use of the corporate website of Grupo Empresarial ET (hereinafter, "THE GROUP"), made up of CAMI Dominicana SRL, Taboada Soluciones Ganaderas SRL, Taboada Productos Cárnicos SRL, Fríodom and Transporte El Palmar.
+
+OWNERSHIP
+The owner of this website is Grupo Empresarial ET, located at Calle Camino de la Barca, No. 96, Cancino Adentro, Santo Domingo Este, Dominican Republic.
+
+INTELLECTUAL PROPERTY
+All website content, including texts, images, logos and design, is the property of THE GROUP or is used with proper authorization. Total or partial reproduction without express authorization is prohibited.
+
+DISCLAIMER OF LIABILITY
+THE GROUP is not liable for damages arising from the use of the information contained on this website. The information is provided for informational purposes and may be subject to change without prior notice.
+
+EXTERNAL LINKS
+This site may contain links to third-party websites. THE GROUP assumes no responsibility for the content, policies or privacy practices of such sites.
+
+APPLICABLE LAW
+These conditions are governed by the laws of the Dominican Republic.`,
+  },
+  privacidad: {
+    titulo: "Privacy Policy",
+    contenido: `At Grupo Empresarial ET (hereinafter, "THE GROUP") we are committed to protecting the privacy of users of our corporate website.
+
+DATA COLLECTED
+Through contact forms, we collect the following personal data: name, email address, company of interest and any additional information the user voluntarily provides in their message.
+
+PURPOSE OF PROCESSING
+Collected data is used exclusively to respond to and follow up on information requests, inquiries or communications initiated by the user through our website.
+
+LEGAL BASIS
+The processing of your data is carried out with your express consent, given by submitting the corresponding contact form.
+
+USER RIGHTS
+The user has the right to access, rectify, cancel or object to the processing of their personal data. To exercise these rights, contact us at pedidos@camidominicana.com.
+
+RETENTION PERIOD
+Personal data will be retained for as long as necessary to address the user's request and, subsequently, for the applicable legal periods.
+
+SECURITY MEASURES
+THE GROUP adopts the necessary technical and organizational measures to ensure the security and integrity of personal data, preventing alteration, loss, unauthorized processing or access.
+
+MODIFICATIONS
+THE GROUP reserves the right to modify this privacy policy to adapt to legislative or jurisprudential developments.`,
+  },
+}
+
 type TipoDocumento = keyof typeof legalContent
 
 export default function LegalModal({ open, tipo, onClose }: { open: boolean; tipo: TipoDocumento | null; onClose: () => void }) {
+  const { lang } = useLang()
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden"
@@ -62,6 +111,8 @@ export default function LegalModal({ open, tipo, onClose }: { open: boolean; tip
     }
     return () => { document.body.style.overflow = "" }
   }, [open])
+
+  const content = lang === "en" ? legalContentEn[tipo || "aviso"] : legalContent[tipo || "aviso"]
 
   return (
     <AnimatePresence>
@@ -89,9 +140,9 @@ export default function LegalModal({ open, tipo, onClose }: { open: boolean; tip
             >
               <X size={18} />
             </button>
-            <h2 className="text-xl font-semibold text-zinc-900 mb-4 pr-8">{legalContent[tipo].titulo}</h2>
+            <h2 className="text-xl font-semibold text-zinc-900 mb-4 pr-8">{content.titulo}</h2>
             <div className="text-sm text-zinc-600 leading-relaxed whitespace-pre-line space-y-3">
-              {legalContent[tipo].contenido}
+              {content.contenido}
             </div>
           </motion.div>
         </motion.div>

@@ -15,11 +15,11 @@ export default function SplitText({
   const words = text.split(" ")
   return (
     <motion.span
+      key={text}
       className={className}
       variants={wordsContainer}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      animate="show"
       custom={delay}
       aria-label={text}
       role="text"

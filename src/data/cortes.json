@@ -1,576 +1,610 @@
 [
-    {
-        "Name":  "Molida de 1ra",
-        "File":  "corte-2.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Carne molida de primera calidad, seleccionada de cortes magros para preparaciones versátiles.",
-        "imported":  false
-    },
-    {
-        "Name":  "Mondongo",
-        "File":  "corte-3.webp",
-        "Category":  "Vísceras",
-        "Description":  "Tripas de res limpias y procesadas, tradicionales en la cocina para sopas y guisos.",
-        "imported":  false
-    },
-    {
-        "Name":  "Ossobuco SH Premium",
-        "File":  "corte-5.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Corte de pierna deshuesado de primera calidad, tierno y jugoso.",
-        "imported":  false
-    },
-    {
-        "Name":  "Rabo",
-        "File":  "corte-6.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Rabo de res troceado, rico en colágeno, perfecto para sopas y guisos tradicionales.",
-        "imported":  false
-    },
-    {
-        "Name":  "No 7 CH",
-        "File":  "corte-7.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Corte de alta calidad con hueso, jugoso y sabroso para asados y brasas.",
-        "imported":  false
-    },
-    {
-        "Name":  "No 7 SH (CL)",
-        "File":  "corte-9.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Corte versátil sin hueso, ideal para plancha, salteados y preparaciones rápidas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Babilla",
-        "File":  "corte-10.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte magro y tierno de la parte trasera, perfecto para bistec, guisos y rellenos.",
-        "imported":  false
-    },
-    {
-        "Name":  "BM 70-30",
-        "File":  "corte-16.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Mezcla jugosa con 70% carne magra y 30% grasa, para hamburguesas artesanales.",
-        "imported":  false
-    },
-    {
-        "Name":  "BM 80-20",
-        "File":  "corte-17.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Carne molida balanceada 80/20 para uso general, perfecta para cocina diaria.",
-        "imported":  false
-    },
-    {
-        "Name":  "BM Moler 90-10",
-        "File":  "corte-18.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Carne molida extra magra 90/10, ideal para dietas saludables y preparaciones bajas en grasa.",
-        "imported":  false
-    },
-    {
-        "Name":  "Bola",
-        "File":  "corte-19.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte redondo y magro de la pierna trasera, excelente para bistec, milanesa y guisos.",
-        "imported":  false
-    },
-    {
-        "Name":  "Boliche",
-        "File":  "corte-21.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte cilíndrico de gran terneza, ideal para rellenar, asar o preparar en olla.",
-        "imported":  false
-    },
-    {
-        "Name":  "Cadera",
-        "File":  "corte-23.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte jugoso de la cadera del animal, versátil para plancha, guisos y asados.",
-        "imported":  false
-    },
-    {
-        "Name":  "California CH",
-        "File":  "corte-25.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Costilla estilo californiana con hueso, ideal para asar a la parrilla.",
-        "imported":  false
-    },
-    {
-        "Name":  "California SH",
-        "File":  "corte-27.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Costilla deshuesada estilo californiana, fácil de cocinar y servir.",
-        "imported":  false
-    },
-    {
-        "Name":  "Churrasco",
-        "File":  "corte-31.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte fino y alargado, perfecto para parrilla, plancha o sartén.",
-        "imported":  false
-    },
-    {
-        "Name":  "Costilla (Short Ribs)",
-        "File":  "corte-33.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Costilla corta de res, de textura jugosa y sabor intenso, ideal para brasas lentas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Dobo",
-        "File":  "corte-35.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte de la paleta con terneza natural, recomendado para guisos y cocción prolongada.",
-        "imported":  false
-    },
-    {
-        "Name":  "Falda (Flank Steak)",
-        "File":  "corte-37.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte plano y fibroso de la falda, perfecto para marinados y parrilla.",
-        "imported":  false
-    },
-    {
-        "Name":  "Filete",
-        "File":  "corte-39.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte de lomo de máxima terneza, reconocido como uno de los más suaves y versátiles.",
-        "imported":  false
-    },
-    {
-        "Name":  "FM (Filete de Miñon)",
-        "File":  "corte-43.webp",
-        "Category":  "Cortes",
-        "Description":  "Filete Miñon de textura fina y sabor suave, perfecto para parrilla y sartén.",
-        "imported":  false
-    },
-    {
-        "Name":  "Hueso Fémur partido",
-        "File":  "corte-45.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Hueso de fémur partido, rico en médula para caldos y sopas nutritivas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Hueso Punta de Pecho",
-        "File":  "corte-46.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Hueso de pecho para caldos tradicionales y preparaciones de larga cocción.",
-        "imported":  false
-    },
-    {
-        "Name":  "Moler Super",
-        "File":  "corte-47.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Carne molida superfina, ideal para embutidos y preparaciones que requieren textura uniforme.",
-        "imported":  false
-    },
-    {
-        "Name":  "Molida 70-30 (2da)",
-        "File":  "corte-48.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Carne molida de segunda con 70% magro, ideal para pasteles y cocción prolongada.",
-        "imported":  false
-    },
-    {
-        "Name":  "Molida 96-4 (Especial)",
-        "File":  "corte-52.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Carne molida extra magra 96/4, para dietas estrictas y preparaciones saludables.",
-        "imported":  false
-    },
-    {
-        "Name":  "Nervios",
-        "File":  "corte-54.webp",
-        "Category":  "Cortes",
-        "Description":  "Nervio de res limpio, usado tradicionalmente en sopas y caldos.",
-        "imported":  false
-    },
-    {
-        "Name":  "Ossobuco CH",
-        "File":  "corte-55.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Corte transversal de pierna con hueso y médula, ideal para cocciones lentas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Paleta CH",
-        "File":  "corte-60.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Corte de paleta con hueso, lleno de sabor para guisos y asados.",
-        "imported":  false
-    },
-    {
-        "Name":  "Pata Marcada Imp",
-        "File":  "corte-62.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Pata de res marcada y procesada, tradicional en sopas y sancochos.",
-        "imported":  false
-    },
-    {
-        "Name":  "Pata Marcada",
-        "File":  "corte-63.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Pata de res marcada, ideal para caldos tradicionales de larga cocción.",
-        "imported":  false
-    },
-    {
-        "Name":  "Pecho Almendra",
-        "File":  "corte-64.webp",
-        "Category":  "Cortes",
-        "Description":  "Punto de pecho de textura suave, excelente para hervir, guisar o desmechar.",
-        "imported":  false
-    },
-    {
-        "Name":  "Pecho Corriente",
-        "File":  "corte-66.webp",
-        "Category":  "Cortes",
-        "Description":  "Pecho de res de uso general, ideal para caldos y cocciones largas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Picaña Premium",
-        "File":  "corte-69.webp",
-        "Category":  "Cortes",
-        "Description":  "Picaña seleccionada de primera calidad, con capa de grasa para máximo sabor.",
-        "imported":  false
-    },
-    {
-        "Name":  "Pulpa",
-        "File":  "corte-71.webp",
-        "Category":  "Cortes",
-        "Description":  "Carne magra y limpia sin grasa, ideal para moler, guisar o preparar en cubos.",
-        "imported":  false
-    },
-    {
-        "Name":  "Punta de Palomilla",
-        "File":  "corte-73.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte delgado de la palomilla, ideal para plancha y preparaciones rápidas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Rabo Rebanado",
-        "File":  "corte-76.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Rabo seccionado en rodajas, fácil de cocinar para sopas y guisos.",
-        "imported":  false
-    },
-    {
-        "Name":  "Ribete FM",
-        "File":  "corte-79.webp",
-        "Category":  "Cortes",
-        "Description":  "Recorte de filete miñon, ideal para cocción lenta, guisos y preparaciones caseras.",
-        "imported":  false
-    },
-    {
-        "Name":  "Ribeye CH",
-        "File":  "corte-89.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Ribeye con hueso, máximo sabor y jugosidad para asados y parrilla.",
-        "imported":  false
-    },
-    {
-        "Name":  "Ribeye SH",
-        "File":  "corte-92.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Ribeye deshuesado, práctico y versátil para toda ocasión culinaria.",
-        "imported":  false
-    },
-    {
-        "Name":  "Rotí CH",
-        "File":  "corte-93.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Corte para asar con hueso, perfecto para rotí al horno o brasas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Rotí SH",
-        "File":  "corte-95.webp",
-        "Category":  "Cortes sin Hueso (SH)",
-        "Description":  "Corte para asar deshuesado, versátil y práctico para toda ocasión.",
-        "imported":  false
-    },
-    {
-        "Name":  "Tapa",
-        "File":  "corte-97.webp",
-        "Category":  "Cortes",
-        "Description":  "Corte que cubre la cadera, magro y sabroso para guisos y plancha.",
-        "imported":  false
-    },
-    {
-        "Name":  "Tendon",
-        "File":  "corte-99.webp",
-        "Category":  "Cortes",
-        "Description":  "Tendón de res procesado, rico en colágeno para caldos y sopas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Tobillo",
-        "File":  "corte-100.webp",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Tobillo de res con hueso, ideal para caldos de larga cocción.",
-        "imported":  false
-    },
-    {
-        "Name":  "Víscera Bazo",
-        "File":  "corte-101.webp",
-        "Category":  "Vísceras",
-        "Description":  "Bazo de res limpio y procesado, para preparaciones tradicionales.",
-        "imported":  false
-    },
-    {
-        "Name":  "Víscera Bofe",
-        "File":  "corte-102.webp",
-        "Category":  "Vísceras",
-        "Description":  "Bofe de res, utilizado en sopas y guisos tradicionales.",
-        "imported":  false
-    },
-    {
-        "Name":  "Víscera Corazón",
-        "File":  "corte-103.webp",
-        "Category":  "Vísceras",
-        "Description":  "Corazón de res limpio, ideal para guisos y brochetas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Víscera Hígado Nac",
-        "File":  "corte-104.webp",
-        "Category":  "Vísceras",
-        "Description":  "Hígado de res nacional, rico en nutrientes y sabor intenso.",
-        "imported":  false
-    },
-    {
-        "Name":  "Víscera Lengua",
-        "File":  "corte-105.webp",
-        "Category":  "Vísceras",
-        "Description":  "Lengua de res, tierna y sabrosa para guisos y desmechar.",
-        "imported":  false
-    },
-    {
-        "Name":  "Víscera Mondongo",
-        "File":  "corte-106.webp",
-        "Category":  "Vísceras",
-        "Description":  "Mondongo de res procesado, tradicional para sopas y guisos.",
-        "imported":  false
-    },
-    {
-        "Name":  "Víscera Pata",
-        "File":  "corte-107.webp",
-        "Category":  "Vísceras",
-        "Description":  "Pata de res limpia y procesada, tradicional en sopas y sancochos.",
-        "imported":  false
-    },
-    {
-        "Name":  "Víscera Riñones",
-        "File":  "corte-109.webp",
-        "Category":  "Vísceras",
-        "Description":  "Riñones de res limpios, para preparaciones tradicionales.",
-        "imported":  false
-    },
-    {
-        "Name":  "Ternera",
-        "File":  "corte-110.webp",
-        "Category":  "Cortes",
-        "Description":  "Carne de ternera tierna y magra, ideal para preparaciones suaves y rápidas.",
-        "imported":  false
-    },
-    {
-        "Name":  "Ternero",
-        "File":  "corte-111.webp",
-        "Category":  "Cortes",
-        "Description":  "Carne de ternero joven, de textura delicada y sabor suave.",
-        "imported":  false
-    },
-    {
-        "Name":  "Alas de pollo (USA) 4x10",
-        "File":  "imported/Alas de pollo (USA) 4x10.jpeg",
-        "Category":  "Aves",
-        "Description":  "Alas de pollo empacadas 4x10 lbs, importadas de Estados Unidos. Perfectas para restaurantes y food service.",
-        "imported":  true
-    },
-    {
-        "Name":  "Alas de pollo Brasil",
-        "File":  "imported/Alas de pollo Brasil.jpeg",
-        "Category":  "Aves",
-        "Description":  "Alas de pollo importadas de Brasil, alta calidad para distribución comercial.",
-        "imported":  true
-    },
-    {
-        "Name":  "Alas de pollo Importadas",
-        "File":  "imported/Alas de pollo Importadas.jpeg",
-        "Category":  "Aves",
-        "Description":  "Alas de pollo seleccionadas de origen importado, ideales para menús de restaurantes.",
-        "imported":  true
-    },
-    {
-        "Name":  "Barrigada de cerdo",
-        "File":  "imported/Barrigada de cerdo.jpeg",
-        "Category":  "Cerdo",
-        "Description":  "Barrigada de cerdo fresca para preparaciones tradicionales y parrilla.",
-        "imported":  true
-    },
-    {
-        "Name":  "Barrigada de cerdo Importada",
-        "File":  "imported/Barrigada de cerdo importado.jpeg",
-        "Category":  "Cerdo",
-        "Description":  "Barrigada de cerdo de importación, jugosa y versátil para cocina profesional.",
-        "imported":  true
-    },
-    {
-        "Name":  "Chuleta de cerdo",
-        "File":  "imported/Chuleta de cerdo importada.jpeg",
-        "Category":  "Cerdo",
-        "Description":  "Chuleta de cerdo importada, corte jugoso ideal para parrilla y plancha.",
-        "imported":  true
-    },
-    {
-        "Name":  "Chuleta de cerdo Imp.",
-        "File":  "imported/Chuleta de cerdo Imp..jpeg",
-        "Category":  "Cerdo",
-        "Description":  "Chuleta de cerdo empacada al vacío de importación, lista para cocinar.",
-        "imported":  true
-    },
-{
-        "Name":  "Filete de pechuga (USA)",
-        "File":  "imported/Filete de pechuga (USA).jpeg",
-        "Category":  "Aves",
-        "Description":  "Filete de pechuga de pollo importado de Estados Unidos, magro y de alta calidad.",
-        "imported":  true
-    },
-    {
-        "Name":  "Filete de pechuga (USA) 4x10",
-        "File":  "imported/Filete de Pechuga (USA) 4x10.jpeg",
-        "Category":  "Aves",
-        "Description":  "Filete de pechuga de pollo 4x10 lbs, empaque comercial importado de USA.",
-        "imported":  true
-    },
-    {
-        "Name":  "Filete de pechuga de pollo Brasil",
-        "File":  "imported/Filete de pechuga de pollo Brasil.jpeg",
-        "Category":  "Aves",
-        "Description":  "Filete de pechuga de pollo importado de Brasil, calidad premium.",
-        "imported":  true
-    },
-    {
-        "Name":  "Filete de res Importado",
-        "File":  "imported/Filete de res importado.jpeg",
-        "Category":  "Cortes de Res Importados",
-        "Description":  "Filete de res de importación, máxima terneza para restaurantes y hoteles.",
-        "imported":  true
-    },
-    {
-        "Name":  "FM Premium (Importado)",
-        "File":  "imported/FM Premium (Importado).jpeg",
-        "Category":  "Cortes de Res Importados",
-        "Description":  "Filete Miñon premium importado, corte de primera calidad para ocasiones especiales.",
-        "imported":  true
-    },
-    {
-        "Name":  "Higado de res Importado",
-        "File":  "imported/Higado de res importado.jpeg",
-        "Category":  "Vísceras Importadas",
-        "Description":  "Hígado de res importado, rico en nutrientes para cocina tradicional y profesional.",
-        "imported":  true
-    },
-    {
-        "Name":  "Mondongo Panza (Nicaragua)",
-        "File":  "imported/Mondong Panza Importado (Nicaragua).jpeg",
-        "Category":  "Vísceras Importadas",
-        "Description":  "Mondongo panza de res importado de Nicaragua, tradicional para sopas y guisos.",
-        "imported":  true
-    },
-    {
-        "Name":  "Mondongo Panza (USA)",
-        "File":  "imported/Mondongo Panza (USA).jpeg",
-        "Category":  "Vísceras Importadas",
-        "Description":  "Mondongo panza de res importado de Estados Unidos, alta calidad para sancochos.",
-        "imported":  true
-    },
-    {
-        "Name":  "Pata de res (Nicaragua)",
-        "File":  "imported/Pata de res (Nicaragua).jpeg",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Pata de res importada de Nicaragua, ideal para caldos tradicionales.",
-        "imported":  true
-    },
-    {
-        "Name":  "Pata de res (USA)",
-        "File":  "imported/Pata de res (USA).jpeg",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Pata de res importada de Estados Unidos, perfecta para sopas y sancochos.",
-        "imported":  true
-    },
-    {
-        "Name":  "Pata de res (Española)",
-        "File":  "imported/Pata de res (Española).jpeg",
-        "Category":  "Cortes con Hueso (CH)",
-        "Description":  "Pata de res estilo española, seleccionada para preparaciones tradicionales.",
-        "imported":  true
-    },
-    {
-        "Name":  "Patica de cerdo",
-        "File":  "imported/Patica de cerdo.jpeg",
-        "Category":  "Cerdo",
-        "Description":  "Patica de cerdo limpia para sopas y platos tradicionales.",
-        "imported":  true
-    },
-    {
-        "Name":  "Patica de cerdo Importada",
-        "File":  "imported/Patica de cerdo importado.jpeg",
-        "Category":  "Cerdo",
-        "Description":  "Patica de cerdo importada, procesada y lista para cocinar.",
-        "imported":  true
-    },
-    {
-        "Name":  "Pierna de cerdo",
-        "File":  "imported/Pierna de cerdo importada.jpeg",
-        "Category":  "Cerdo",
-        "Description":  "Pierna de cerdo importada, ideal para asados y preparaciones al horno.",
-        "imported":  true
-    },
-    {
-        "Name":  "Pierna de cerdo 20 UP",
-        "File":  "imported/Pierna de cerdo 20 UP.jpeg",
-        "Category":  "Cerdo",
-        "Description":  "Pierna de cerdo 20 UP (unidades por pallet) de importación para distribución.",
-        "imported":  true
-    },
-    {
-        "Name":  "Pierna de cerdo 20-27",
-        "File":  "imported/Pierna de cerdo 20-27.jpeg",
-        "Category":  "Cerdo",
-        "Description":  "Pierna de cerdo calibre 20-27 lbs, importada para carnicerías y supermercados.",
-        "imported":  true
-    },
-    {
-        "Name":  "Pierna de cerdo Importado",
-        "File":  "imported/Pierna de cerdo importado.jpeg",
-        "Category":  "Cerdo",
-        "Description":  "Pierna de cerdo de importación, carne jugosa para cocina profesional.",
-        "imported":  true
-    },
-    {
-        "Name":  "Pulmones de res (Bofe) Importados",
-        "File":  "imported/Pulmones de res importados (Bofe).jpeg",
-        "Category":  "Vísceras Importadas",
-        "Description":  "Bofe (pulmones) de res importado, para sopas y guisos tradicionales.",
-        "imported":  true
-    },
-    {
-        "Name":  "Rabo de res Importada",
-        "File":  "imported/Rabo de res importada.jpeg",
-        "Category":  "Cortes de Res Importados",
-        "Description":  "Rabo de res importado, rico en colágeno para sopas y guisos tradicionales.",
-        "imported":  true
-    },
-    {
-        "Name":  "Roti sin hueso Importado",
-        "File":  "imported/Roti sin hueso Importado.jpeg",
-        "Category":  "Cortes de Res Importados",
-        "Description":  "Roti deshuesado importado, ideal para asar al horno o brasas.",
-        "imported":  true
-    }
+  {
+    "Name": "Molida de 1ra",
+    "NameEn": "Ground Beef 1st Grade",
+    "File": "corte-2.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Carne molida de primera calidad, seleccionada de cortes magros para preparaciones versátiles.",
+    "DescriptionEn": "First-quality ground beef, selected from lean cuts for versatile preparations.",
+    "imported": false
+  },
+  {
+    "Name": "Mondongo",
+    "NameEn": "Tripe",
+    "File": "corte-3.webp",
+    "Category": "Vísceras",
+    "CategoryEn": "Offal",
+    "Description": "Tripas de res limpias y procesadas, tradicionales en la cocina para sopas y guisos.",
+    "DescriptionEn": "Clean, processed beef tripe, traditional in cooking for soups and stews.",
+    "imported": false
+  },
+  {
+    "Name": "Ossobuco SH Premium",
+    "NameEn": "Ossobuco SH Premium",
+    "File": "corte-5.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Corte de pierna deshuesado de primera calidad, tierno y jugoso.",
+    "DescriptionEn": "First-quality boneless leg cut, tender and juicy.",
+    "imported": false
+  },
+  {
+    "Name": "Rabo",
+    "NameEn": "Oxtail",
+    "File": "corte-6.webp",
+    "Category": "Cortes con Hueso (CH)",
+    "CategoryEn": "Bone-in Cuts (CH)",
+    "Description": "Rabo de res troceado, rico en colágeno, perfecto para sopas y guisos tradicionales.",
+    "DescriptionEn": "Chopped beef oxtail, rich in collagen, perfect for traditional soups and stews.",
+    "imported": false
+  },
+  {
+    "Name": "No 7 CH",
+    "NameEn": "No 7 CH",
+    "File": "corte-7.webp",
+    "Category": "Cortes con Hueso (CH)",
+    "CategoryEn": "Bone-in Cuts (CH)",
+    "Description": "Corte de alta calidad con hueso, jugoso y sabroso para asados y brasas.",
+    "DescriptionEn": "High-quality bone-in cut, juicy and flavorful for roasts and grilling.",
+    "imported": false
+  },
+  {
+    "Name": "No 7 SH (CL)",
+    "NameEn": "No 7 SH (CL)",
+    "File": "corte-9.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Corte versátil sin hueso, ideal para plancha, salteados y preparaciones rápidas.",
+    "DescriptionEn": "Versatile boneless cut, ideal for griddle, stir-fry and quick preparations.",
+    "imported": false
+  },
+  {
+    "Name": "Babilla",
+    "NameEn": "Sirloin (Babilla)",
+    "File": "corte-10.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Corte magro y tierno de la parte trasera, perfecto para bistec, guisos y rellenos.",
+    "DescriptionEn": "Lean, tender rear cut, perfect for steak, stews and fillings.",
+    "imported": false
+  },
+  {
+    "Name": "BM 70-30",
+    "NameEn": "Ground Beef 70-30",
+    "File": "corte-16.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Mezcla jugosa con 70% carne magra y 30% grasa, para hamburguesas artesanales.",
+    "DescriptionEn": "Juicy blend of 70% lean meat and 30% fat, for artisan burgers.",
+    "imported": false
+  },
+  {
+    "Name": "BM 80-20",
+    "NameEn": "Ground Beef 80-20",
+    "File": "corte-17.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Carne molida balanceada 80/20 para uso general, perfecta para cocina diaria.",
+    "DescriptionEn": "Balanced 80/20 ground beef for general use, perfect for daily cooking.",
+    "imported": false
+  },
+  {
+    "Name": "BM Moler 90-10",
+    "NameEn": "Lean Ground Beef 90-10",
+    "File": "corte-18.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Carne molida extra magra 90/10, ideal para dietas saludables y preparaciones bajas en grasa.",
+    "DescriptionEn": "Extra-lean 90/10 ground beef, ideal for healthy diets and low-fat preparations.",
+    "imported": false
+  },
+  {
+    "Name": "Bola",
+    "NameEn": "Top Round (Bola)",
+    "File": "corte-19.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Corte redondo y magro de la pierna trasera, excelente para bistec, milanesa y guisos.",
+    "DescriptionEn": "Round, lean cut from the rear leg, excellent for steak, cutlets and stews.",
+    "imported": false
+  },
+  {
+    "Name": "Boliche",
+    "NameEn": "Eye Round (Boliche)",
+    "File": "corte-21.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Corte cilíndrico de gran terneza, ideal para rellenar, asar o preparar en olla.",
+    "DescriptionEn": "Cylindrical cut of great tenderness, ideal for stuffing, roasting or pot cooking.",
+    "imported": false
+  },
+  {
+    "Name": "Cadera",
+    "NameEn": "Sirloin (Cadera)",
+    "File": "corte-23.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Corte jugoso de la cadera del animal, versátil para plancha, guisos y asados.",
+    "DescriptionEn": "Juicy sirloin cut, versatile for griddle, stews and roasts.",
+    "imported": false
+  },
+  {
+    "Name": "California CH",
+    "NameEn": "California CH",
+    "File": "corte-25.webp",
+    "Category": "Cortes con Hueso (CH)",
+    "CategoryEn": "Bone-in Cuts (CH)",
+    "Description": "Costilla estilo californiana con hueso, ideal para asar a la parrilla.",
+    "DescriptionEn": "California-style rib with bone, ideal for grilling.",
+    "imported": false
+  },
+  {
+    "Name": "California SH",
+    "NameEn": "California SH",
+    "File": "corte-27.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Costilla deshuesada estilo californiana, fácil de cocinar y servir.",
+    "DescriptionEn": "Boneless California-style rib, easy to cook and serve.",
+    "imported": false
+  },
+  {
+    "Name": "Churrasco",
+    "NameEn": "Churrasco (Sirloin Flap)",
+    "File": "corte-31.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Corte fino y alargado, perfecto para parrilla, plancha o sartén.",
+    "DescriptionEn": "Thin, elongated cut, perfect for grill, griddle or pan.",
+    "imported": false
+  },
+  {
+    "Name": "Costilla (Short Ribs)",
+    "NameEn": "Short Ribs",
+    "File": "corte-33.webp",
+    "Category": "Cortes con Hueso (CH)",
+    "CategoryEn": "Bone-in Cuts (CH)",
+    "Description": "Costilla corta de res, de textura jugosa y sabor intenso, ideal para brasas lentas.",
+    "DescriptionEn": "Beef short ribs, juicy texture and intense flavor, ideal for slow coals.",
+    "imported": false
+  },
+  {
+    "Name": "Dobo",
+    "NameEn": "Chuck (Dobo)",
+    "File": "corte-35.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Corte de la paleta con terneza natural, recomendado para guisos y cocción prolongada.",
+    "DescriptionEn": "Shoulder cut with natural tenderness, recommended for stews and prolonged cooking.",
+    "imported": false
+  },
+  {
+    "Name": "Falda (Flank Steak)",
+    "NameEn": "Flank Steak",
+    "File": "corte-37.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Corte plano y fibroso de la falda, perfecto para marinados y parrilla.",
+    "DescriptionEn": "Flat, fibrous flank cut, perfect for marinades and grilling.",
+    "imported": false
+  },
+  {
+    "Name": "Filete",
+    "NameEn": "Tenderloin (Filete)",
+    "File": "corte-39.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Corte de lomo de máxima terneza, reconocido como uno de los más suaves y versátiles.",
+    "DescriptionEn": "Loin cut of maximum tenderness, recognized as one of the softest and most versatile.",
+    "imported": false
+  },
+  {
+    "Name": "FM (Filete de Miñon)",
+    "NameEn": "Filet Mignon",
+    "File": "corte-43.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Filete Miñon de textura fina y sabor suave, perfecto para parrilla y sartén.",
+    "DescriptionEn": "Filet Mignon with fine texture and mild flavor, perfect for grill and pan.",
+    "imported": false
+  },
+  {
+    "Name": "Moler Super",
+    "NameEn": "Super Ground (Moler Super)",
+    "File": "corte-47.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Carne molida superfina, ideal para embutidos y preparaciones que requieren textura uniforme.",
+    "DescriptionEn": "Extra-fine ground beef, ideal for sausages and preparations requiring uniform texture.",
+    "imported": false
+  },
+  {
+    "Name": "Molida 70-30 (2da)",
+    "NameEn": "Ground Beef 70-30 (2nd)",
+    "File": "corte-48.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Carne molida de segunda con 70% magro, ideal para pasteles y cocción prolongada.",
+    "DescriptionEn": "Second-grade ground beef with 70% lean, ideal for patties and prolonged cooking.",
+    "imported": false
+  },
+  {
+    "Name": "Molida 96-4 (Especial)",
+    "NameEn": "Ground Beef 96-4 (Special)",
+    "File": "corte-52.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Carne molida extra magra 96/4, para dietas estrictas y preparaciones saludables.",
+    "DescriptionEn": "Extra-lean 96/4 ground beef, for strict diets and healthy preparations.",
+    "imported": false
+  },
+
+  {
+    "Name": "Ossobuco CH",
+    "NameEn": "Ossobuco CH",
+    "File": "corte-55.webp",
+    "Category": "Cortes con Hueso (CH)",
+    "CategoryEn": "Bone-in Cuts (CH)",
+    "Description": "Corte transversal de pierna con hueso y médula, ideal para cocciones lentas.",
+    "DescriptionEn": "Cross-sectional leg cut with bone and marrow, ideal for slow cooking.",
+    "imported": false
+  },
+
+
+  {
+    "Name": "Pecho Almendra",
+    "NameEn": "Brisket Almond (Pecho Almendra)",
+    "File": "corte-64.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Punto de pecho de textura suave, excelente para hervir, guisar o desmechar.",
+    "DescriptionEn": "Soft-textured brisket point, excellent for boiling, stewing or shredding.",
+    "imported": false
+  },
+  {
+    "Name": "Pecho Corriente",
+    "NameEn": "Brisket (Pecho Corriente)",
+    "File": "corte-66.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Pecho de res de uso general, ideal para caldos y cocciones largas.",
+    "DescriptionEn": "General-purpose beef brisket, ideal for broths and long cooking.",
+    "imported": false
+  },
+  {
+    "Name": "Picaña Premium",
+    "NameEn": "Premium Picanha",
+    "File": "corte-69.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Picaña seleccionada de primera calidad, con capa de grasa para máximo sabor.",
+    "DescriptionEn": "Selected first-quality picanha, with a fat cap for maximum flavor.",
+    "imported": false
+  },
+  {
+    "Name": "Punta de Palomilla",
+    "NameEn": "Sirloin Tip",
+    "File": "corte-73.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Corte delgado de la palomilla, ideal para plancha y preparaciones rápidas.",
+    "DescriptionEn": "Thin sirloin tip cut, ideal for griddle and quick preparations.",
+    "imported": false
+  },
+  {
+    "Name": "Ribete FM",
+    "NameEn": "Filet Mignon Trim (Ribete FM)",
+    "File": "corte-79.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Recorte de filete miñon, ideal para cocción lenta, guisos y preparaciones caseras.",
+    "DescriptionEn": "Filet mignon trim, ideal for slow cooking, stews and home preparations.",
+    "imported": false
+  },
+  {
+    "Name": "Ribeye CH",
+    "NameEn": "Ribeye CH",
+    "File": "corte-89.webp",
+    "Category": "Cortes con Hueso (CH)",
+    "CategoryEn": "Bone-in Cuts (CH)",
+    "Description": "Ribeye con hueso, máximo sabor y jugosidad para asados y parrilla.",
+    "DescriptionEn": "Bone-in ribeye, maximum flavor and juiciness for roasts and grilling.",
+    "imported": false
+  },
+  {
+    "Name": "Ribeye SH",
+    "NameEn": "Ribeye SH",
+    "File": "corte-92.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Ribeye deshuesado, práctico y versátil para toda ocasión culinaria.",
+    "DescriptionEn": "Boneless ribeye, practical and versatile for any culinary occasion.",
+    "imported": false
+  },
+  {
+    "Name": "Rotí CH",
+    "NameEn": "Rotisserie Roast CH",
+    "File": "corte-93.webp",
+    "Category": "Cortes con Hueso (CH)",
+    "CategoryEn": "Bone-in Cuts (CH)",
+    "Description": "Corte para asar con hueso, perfecto para rotí al horno o brasas.",
+    "DescriptionEn": "Bone-in roasting cut, perfect for oven roast or coals.",
+    "imported": false
+  },
+  {
+    "Name": "Rotí SH",
+    "NameEn": "Rotisserie Roast SH",
+    "File": "corte-95.webp",
+    "Category": "Cortes sin Hueso (SH)",
+    "CategoryEn": "Boneless Cuts (SH)",
+    "Description": "Corte para asar deshuesado, versátil y práctico para toda ocasión.",
+    "DescriptionEn": "Boneless roasting cut, versatile and practical for any occasion.",
+    "imported": false
+  },
+  {
+    "Name": "Tapa",
+    "NameEn": "Top Sirloin (Tapa)",
+    "File": "corte-97.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Corte que cubre la cadera, magro y sabroso para guisos y plancha.",
+    "DescriptionEn": "Cut covering the hip, lean and flavorful for stews and griddle.",
+    "imported": false
+  },
+  {
+    "Name": "Tendon",
+    "NameEn": "Beef Tendon",
+    "File": "corte-99.webp",
+    "Category": "Cortes",
+    "CategoryEn": "Cuts",
+    "Description": "Tendón de res procesado, rico en colágeno para caldos y sopas.",
+    "DescriptionEn": "Processed beef tendon, rich in collagen for broths and soups.",
+    "imported": false
+  },
+  {
+    "Name": "Tobillo",
+    "NameEn": "Shank (Tobillo)",
+    "File": "corte-100.webp",
+    "Category": "Cortes con Hueso (CH)",
+    "CategoryEn": "Bone-in Cuts (CH)",
+    "Description": "Tobillo de res con hueso, ideal para caldos de larga cocción.",
+    "DescriptionEn": "Beef shank with bone, ideal for long-simmered broths.",
+    "imported": false
+  },
+  {
+    "Name": "Víscera Bazo",
+    "NameEn": "Beef Spleen (Bazo)",
+    "File": "corte-101.webp",
+    "Category": "Vísceras",
+    "CategoryEn": "Offal",
+    "Description": "Bazo de res limpio y procesado, para preparaciones tradicionales.",
+    "DescriptionEn": "Clean, processed beef spleen, for traditional preparations.",
+    "imported": false
+  },
+  {
+    "Name": "Víscera Bofe",
+    "NameEn": "Beef Lungs (Bofe)",
+    "File": "corte-102.webp",
+    "Category": "Vísceras",
+    "CategoryEn": "Offal",
+    "Description": "Bofe de res, utilizado en sopas y guisos tradicionales.",
+    "DescriptionEn": "Beef lungs, used in traditional soups and stews.",
+    "imported": false
+  },
+  {
+    "Name": "Víscera Corazón",
+    "NameEn": "Beef Heart",
+    "File": "corte-103.webp",
+    "Category": "Vísceras",
+    "CategoryEn": "Offal",
+    "Description": "Corazón de res limpio, ideal para guisos y brochetas.",
+    "DescriptionEn": "Clean beef heart, ideal for stews and skewers.",
+    "imported": false
+  },
+  {
+    "Name": "Víscera Hígado Nac",
+    "NameEn": "Beef Liver (Domestic)",
+    "File": "corte-104.webp",
+    "Category": "Vísceras",
+    "CategoryEn": "Offal",
+    "Description": "Hígado de res nacional, rico en nutrientes y sabor intenso.",
+    "DescriptionEn": "Domestic beef liver, rich in nutrients and intense flavor.",
+    "imported": false
+  },
+  {
+    "Name": "Víscera Lengua",
+    "NameEn": "Beef Tongue",
+    "File": "corte-105.webp",
+    "Category": "Vísceras",
+    "CategoryEn": "Offal",
+    "Description": "Lengua de res, tierna y sabrosa para guisos y desmechar.",
+    "DescriptionEn": "Beef tongue, tender and flavorful for stews and shredding.",
+    "imported": false
+  },
+  {
+    "Name": "Víscera Pata",
+    "NameEn": "Beef Trotters (Pata)",
+    "File": "corte-107.webp",
+    "Category": "Vísceras",
+    "CategoryEn": "Offal",
+    "Description": "Pata de res limpia y procesada, tradicional en sopas y sancochos.",
+    "DescriptionEn": "Clean, processed beef trotters, traditional in soups and stews.",
+    "imported": false
+  },
+  {
+    "Name": "Víscera Riñones",
+    "NameEn": "Beef Kidneys",
+    "File": "corte-109.webp",
+    "Category": "Vísceras",
+    "CategoryEn": "Offal",
+    "Description": "Riñones de res limpios, para preparaciones tradicionales.",
+    "DescriptionEn": "Clean beef kidneys, for traditional preparations.",
+    "imported": false
+  },
+
+  {
+    "Name": "Alas de pollo Brasil",
+    "NameEn": "Chicken Wings Brazil",
+    "File": "imported/Alas_de_pollo_Brasil_nogal_premium.webp",
+    "Category": "Aves",
+    "CategoryEn": "Poultry",
+    "Description": "Alas de pollo importadas de Brasil, alta calidad para distribución comercial.",
+    "DescriptionEn": "Chicken wings imported from Brazil, high quality for commercial distribution.",
+    "imported": true
+  },
+  {
+    "Name": "Alas de pollo Importadas",
+    "NameEn": "Imported Chicken Wings",
+    "File": "imported/Alas_de_pollo_Importadas_nogal_premium.webp",
+    "Category": "Aves",
+    "CategoryEn": "Poultry",
+    "Description": "Alas de pollo seleccionadas de origen importado, ideales para menús de restaurantes.",
+    "DescriptionEn": "Selected imported chicken wings, ideal for restaurant menus.",
+    "imported": true
+  },
+
+  {
+    "Name": "Barrigada de cerdo Importada",
+    "NameEn": "Imported Pork Belly",
+    "File": "imported/Barrigada_de_cerdo_importado_nogal_premium.webp",
+    "Category": "Cerdo",
+    "CategoryEn": "Pork",
+    "Description": "Barrigada de cerdo de importación, jugosa y versátil para cocina profesional.",
+    "DescriptionEn": "Imported pork belly, juicy and versatile for professional cooking.",
+    "imported": true
+  },
+
+  {
+    "Name": "Chuleta de cerdo Imp.",
+    "NameEn": "Imported Pork Chop",
+    "File": "imported/Chuleta_de_cerdo_Imp_nogal_premium.webp",
+    "Category": "Cerdo",
+    "CategoryEn": "Pork",
+    "Description": "Chuleta de cerdo empacada al vacío de importación, lista para cocinar.",
+    "DescriptionEn": "Imported vacuum-packed pork chop, ready to cook.",
+    "imported": true
+  },
+  {
+    "Name": "Filete de pechuga (USA)",
+    "NameEn": "Chicken Breast Fillets (USA)",
+    "File": "imported/Filete_de_pechuga_USA_nogal_premium.webp",
+    "Category": "Aves",
+    "CategoryEn": "Poultry",
+    "Description": "Filete de pechuga de pollo importado de Estados Unidos, magro y de alta calidad.",
+    "DescriptionEn": "Chicken breast fillet imported from the United States, lean and high quality.",
+    "imported": true
+  },
+  {
+    "Name": "Filete de pechuga de pollo Brasil",
+    "NameEn": "Chicken Breast Fillets Brazil",
+    "File": "imported/Filete_de_pechuga_de_pollo_Brasil_nogal_premium.webp",
+    "Category": "Aves",
+    "CategoryEn": "Poultry",
+    "Description": "Filete de pechuga de pollo importado de Brasil, calidad premium.",
+    "DescriptionEn": "Chicken breast fillet imported from Brazil, premium quality.",
+    "imported": true
+  },
+  {
+    "Name": "Filete de res Importado",
+    "NameEn": "Imported Beef Tenderloin",
+    "File": "imported/Filete_de_res_importado_nogal_premium.webp",
+    "Category": "Cortes de Res Importados",
+    "CategoryEn": "Imported Beef Cuts",
+    "Description": "Filete de res de importación, máxima terneza para restaurantes y hoteles.",
+    "DescriptionEn": "Imported beef tenderloin, maximum tenderness for restaurants and hotels.",
+    "imported": true
+  },
+  {
+    "Name": "FM Premium (Importado)",
+    "NameEn": "Premium Filet Mignon (Imported)",
+    "File": "imported/FM_Premium_Importado_nogal_premium.webp",
+    "Category": "Cortes de Res Importados",
+    "CategoryEn": "Imported Beef Cuts",
+    "Description": "Filete Miñon premium importado, corte de primera calidad para ocasiones especiales.",
+    "DescriptionEn": "Imported premium filet mignon, first-quality cut for special occasions.",
+    "imported": true
+  },
+  {
+    "Name": "Higado de res Importado",
+    "NameEn": "Imported Beef Liver",
+    "File": "imported/Higado_de_res_importado_nogal_premium.webp",
+    "Category": "Vísceras Importadas",
+    "CategoryEn": "Imported Offal",
+    "Description": "Hígado de res importado, rico en nutrientes para cocina tradicional y profesional.",
+    "DescriptionEn": "Imported beef liver, rich in nutrients for traditional and professional cooking.",
+    "imported": true
+  },
+  {
+    "Name": "Mondongo Panza (USA)",
+    "NameEn": "Tripe Belly (USA)",
+    "File": "imported/Mondongo_Panza_USA_nogal_premium.webp",
+    "Category": "Vísceras Importadas",
+    "CategoryEn": "Imported Offal",
+    "Description": "Mondongo panza de res importado de Estados Unidos, alta calidad para sancochos.",
+    "DescriptionEn": "Beef tripe belly imported from the United States, high quality for stews.",
+    "imported": true
+  },
+  {
+"Name":  "Pata de res importada",
+    "NameEn":  "Imported Beef Trotters",
+    "File": "imported/Pata_de_res_Nicaragua_nogal_premium.webp",
+    "Category": "Cortes con Hueso (CH)",
+    "CategoryEn": "Bone-in Cuts (CH)",
+    "Description": "Pata de res importada de Nicaragua, ideal para caldos tradicionales.",
+    "DescriptionEn": "Beef trotters imported from Nicaragua, ideal for traditional broths.",
+    "imported": true
+  },
+
+  {
+    "Name": "Patica de cerdo Importada",
+    "NameEn": "Imported Pork Trotters",
+    "File": "imported/Patica_de_cerdo_importado_nogal_premium.webp",
+    "Category": "Cerdo",
+    "CategoryEn": "Pork",
+    "Description": "Patica de cerdo importada, procesada y lista para cocinar.",
+    "DescriptionEn": "Imported pork trotters, processed and ready to cook.",
+    "imported": true
+  },
+
+  {
+    "Name": "Pierna de cerdo Importado",
+    "NameEn": "Imported Pork Leg",
+    "File": "imported/Pierna_de_cerdo_importado_nogal_premium.webp",
+    "Category": "Cerdo",
+    "CategoryEn": "Pork",
+    "Description": "Pierna de cerdo de importación, carne jugosa para cocina profesional.",
+    "DescriptionEn": "Imported pork leg, juicy meat for professional cooking.",
+    "imported": true
+  },
+  {
+    "Name": "Pulmones de res (Bofe) Importados",
+    "NameEn": "Imported Beef Lungs (Bofe)",
+    "File": "imported/Pulmones_de_res_importados_Bofe_nogal_premium.webp",
+    "Category": "Vísceras Importadas",
+    "CategoryEn": "Imported Offal",
+    "Description": "Bofe (pulmones) de res importado, para sopas y guisos tradicionales.",
+    "DescriptionEn": "Imported beef lungs (bofe), for traditional soups and stews.",
+    "imported": true
+  },
+  {
+    "Name": "Rabo de res Importada",
+    "NameEn": "Imported Beef Oxtail",
+    "File": "imported/Rabo_de_res_importada_nogal_premium.webp",
+    "Category": "Cortes de Res Importados",
+    "CategoryEn": "Imported Beef Cuts",
+    "Description": "Rabo de res importado, rico en colágeno para sopas y guisos tradicionales.",
+    "DescriptionEn": "Imported beef oxtail, rich in collagen for traditional soups and stews.",
+    "imported": true
+  },
+  {
+    "Name": "Roti sin hueso Importado",
+    "NameEn": "Imported Boneless Roast",
+    "File": "imported/Roti_sin_hueso_Importado_nogal_premium.webp",
+    "Category": "Cortes de Res Importados",
+    "CategoryEn": "Imported Beef Cuts",
+    "Description": "Roti deshuesado importado, ideal para asar al horno o brasas.",
+    "DescriptionEn": "Imported boneless rotisserie roast, ideal for oven or coals.",
+    "imported": true
+  }
 ]

@@ -5,8 +5,10 @@ import { motion } from "framer-motion"
 import { Play, Download, FileVideo } from "lucide-react"
 import { curtain, fadeUp } from "@/lib/animations"
 import SectionWrapper, { SectionTitle } from "./SectionWrapper"
+import { useLang } from "@/i18n/LanguageProvider"
 
 export default function VideoSection() {
+  const { t } = useLang()
   const [playing, setPlaying] = useState(false)
   const [error, setError] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -21,8 +23,8 @@ export default function VideoSection() {
   return (
     <SectionWrapper id="multimedia" dark>
       <SectionTitle
-        label="Multimedia"
-        title="Video Corporativo"
+        label={t("multimedia.label")}
+        title={t("multimedia.title")}
         dark
       />
 
@@ -40,7 +42,7 @@ export default function VideoSection() {
                 <FileVideo size={28} className="text-zinc-400" />
               </div>
               <p className="text-sm text-zinc-400">
-                El video no pudo cargarse.
+                {t("multimedia.error")}
               </p>
               <a
                 href="/assets/Video corporativo.mp4"
@@ -48,7 +50,7 @@ export default function VideoSection() {
                 className="inline-flex items-center gap-2 rounded-full bg-white/10 px-6 py-2.5 text-xs font-medium text-white transition-colors hover:bg-white/20"
               >
                 <Download size={14} />
-                Descargar video
+                {t("multimedia.download")}
               </a>
             </div>
           ) : (
@@ -97,7 +99,7 @@ export default function VideoSection() {
           custom={1}
           className="mt-6 text-center text-sm text-zinc-500"
         >
-          Video de presentación corporativa - Grupo Empresarial ET
+          {t("multimedia.caption")}
         </motion.p>
       </div>
     </SectionWrapper>

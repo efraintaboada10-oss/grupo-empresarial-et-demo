@@ -4,18 +4,20 @@ import { motion } from "framer-motion"
 import { FileText, Download, Beef, Package, Heart, Grid3X3 } from "lucide-react"
 import { curtain, fadeUp } from "@/lib/animations"
 import SectionWrapper, { SectionTitle } from "./SectionWrapper"
+import { useLang } from "@/i18n/LanguageProvider"
 
 const categorias = [
-  { icon: Beef, nombre: "Cortes", desc: "Selección de cortes de carne bovina para los paladares más exigentes.", link: "/cortes?categoria=Cortes" },
-  { icon: Grid3X3, nombre: "Cortes con Hueso (CH)", desc: "Cortes que incluyen hueso, ideales para asados y cocciones lentas.", link: "/cortes?categoria=Cortes con Hueso (CH)" },
-  { icon: Package, nombre: "Cortes sin Hueso (SH)", desc: "Cortes deshuesados, prácticos y versátiles para toda ocasión.", link: "/cortes?categoria=Cortes sin Hueso (SH)" },
-  { icon: Heart, nombre: "Vísceras", desc: "Variedad de vísceras de res para preparaciones tradicionales.", link: "/cortes?categoria=V%C3%ADsceras" },
+  { icon: Beef, key: "cortes", link: "/cortes?categoria=Cortes" },
+  { icon: Grid3X3, key: "ch", link: "/cortes?categoria=Cortes con Hueso (CH)" },
+  { icon: Package, key: "sh", link: "/cortes?categoria=Cortes sin Hueso (SH)" },
+  { icon: Heart, key: "visceras", link: "/cortes?categoria=V%C3%ADsceras" },
 ]
 
 export default function Catalogo() {
+  const { t } = useLang()
   return (
     <SectionWrapper id="catalogo">
-      <SectionTitle label="Catálogo" title="Productos Cárnicos" />
+      <SectionTitle label={t("catalogo.label")} title={t("catalogo.title")} />
 
       <div className="space-y-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -23,7 +25,7 @@ export default function Catalogo() {
             const Icon = cat.icon
             return (
               <motion.a
-                key={cat.nombre}
+                key={cat.key}
                 href={cat.link}
                 variants={curtain}
                 initial="hidden"
@@ -35,8 +37,8 @@ export default function Catalogo() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-900 text-white group-hover:bg-zinc-700 transition-colors">
                   <Icon size={22} />
                 </div>
-                <h3 className="text-lg font-semibold text-zinc-900">{cat.nombre}</h3>
-                <p className="mt-2 text-sm text-zinc-500 leading-relaxed">{cat.desc}</p>
+                <h3 className="text-lg font-semibold text-zinc-900">{t(`catalogo.${cat.key}`)}</h3>
+                <p className="mt-2 text-sm text-zinc-500 leading-relaxed">{t(`catalogo.${cat.key}Desc`)}</p>
               </motion.a>
             )
           })}
@@ -56,11 +58,10 @@ export default function Catalogo() {
             <FileText size={28} />
           </div>
           <h3 className="text-2xl md:text-3xl font-bold text-zinc-900">
-            Catálogo Completo de Productos
+            {t("catalogo.completoTitulo")}
           </h3>
           <p className="subtitle mx-auto mt-4 max-w-xl text-zinc-500 leading-relaxed">
-            Descargue nuestro catálogo en PDF con la lista completa de productos, cortes,
-            presentaciones y especificaciones técnicas de todas nuestras empresas.
+            {t("catalogo.completoDesc")}
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
@@ -70,14 +71,14 @@ export default function Catalogo() {
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-zinc-900 px-8 text-sm font-medium text-white transition-all duration-300 hover:bg-black hover:shadow-lg hover:shadow-black/25"
             >
               <Download size={16} />
-              Descargar Catálogo (PDF)
+              {t("catalogo.descargar")}
             </a>
             <a
               href="/cortes"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white px-8 text-sm font-medium text-zinc-700 transition-all duration-300 hover:border-zinc-400 hover:bg-zinc-50 hover:shadow-lg"
             >
               <Grid3X3 size={16} />
-              Ver Galería de Cortes
+              {t("catalogo.verGalería")}
             </a>
           </div>
         </motion.div>

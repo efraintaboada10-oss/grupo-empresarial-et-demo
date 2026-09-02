@@ -8,6 +8,7 @@ import { curtain } from "@/lib/animations"
 import { empresas } from "@/data/empresas"
 import cortesData from "@/data/cortes.json"
 import SectionWrapper, { SectionTitle } from "./SectionWrapper"
+import { useLang } from "@/i18n/LanguageProvider"
 
 const logos: Record<string, string> = {
   cami: "/images/Logo Cami Dominicana.webp",
@@ -18,6 +19,7 @@ const logos: Record<string, string> = {
 }
 
 export default function EmpresasGrid() {
+  const { t, lang } = useLang()
   const [selected, setSelected] = useState<typeof empresas[0] | null>(null)
   const [zoomedCorte, setZoomedCorte] = useState<{ name: string; file: string } | null>(null)
 
@@ -35,9 +37,9 @@ export default function EmpresasGrid() {
   const last2 = empresas.slice(3)
 
   const cortesByName = useMemo(() => {
-    const map = new Map<string, { File: string; Description: string }>()
-    for (const c of cortesData as Array<{ Name: string; File: string; Description: string; imported: boolean }>) {
-      map.set(c.Name, { File: c.File, Description: c.Description })
+    const map = new Map<string, { File: string; Description: string; NameEn?: string }>()
+    for (const c of cortesData as Array<{ Name: string; NameEn?: string; File: string; Description: string; imported: boolean }>) {
+      map.set(c.Name, { File: c.File, Description: c.Description, NameEn: c.NameEn })
     }
     return map
   }, [])
@@ -65,12 +67,12 @@ export default function EmpresasGrid() {
               loading="lazy"
             />
           </div>
-          <h3 className="text-xl font-semibold text-zinc-900">{empresa.nombre}</h3>
-          <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
-            {empresa.descripcion}
+<h3 className="text-xl font-semibold text-zinc-900">{lang === "en" && empresa.nombreEn ? empresa.nombreEn : empresa.nombre}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-zinc-600 line-clamp-3">
+            {lang === "en" && empresa.descripcionEn ? empresa.descripcionEn : empresa.descripcion}
           </p>
           <span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-zinc-400 group-hover:text-zinc-600 transition-colors">
-            Ver más <ChevronRight size={12} />
+            {t("empresas.verMas")} <ChevronRight size={12} />
           </span>
         </div>
       </motion.button>
@@ -80,7 +82,7 @@ export default function EmpresasGrid() {
   return (
     <>
       <SectionWrapper id="empresas">
-        <SectionTitle label="Nuestras Empresas" title="Empresas del Grupo" />
+        <SectionTitle label={t("empresas.label")} title={t("empresas.title")} />
 
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -124,7 +126,7 @@ export default function EmpresasGrid() {
               <button
                 onClick={() => setSelected(null)}
                 className={`absolute top-4 right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm ${selected.palette.textMuted} hover:bg-white ${selected.palette.text} transition-all z-10`}
-                aria-label="Cerrar"
+aria-label={t("empresas.cerrar")}
               >
                 <X size={18} />
               </button>
@@ -139,19 +141,19 @@ export default function EmpresasGrid() {
                     />
                   </div>
                   <div>
-                    <h3 className={`text-xl font-semibold ${selected.palette.text} font-serif`}>{selected.nombre}</h3>
-                    <span className={`text-xs font-medium uppercase tracking-wider ${selected.id === "taboada-carnicos" ? "text-red-600" : selected.palette.textMuted}`}>{selected.sector}</span>
+                    <h3 className={`text-xl font-semibold ${selected.palette.text} font-serif`}>{lang === "en" && selected.nombreEn ? selected.nombreEn : selected.nombre}</h3>
+                    <span className={`text-xs font-medium uppercase tracking-wider ${selected.id === "taboada-carnicos" ? "text-red-600" : selected.palette.textMuted}`}>{lang === "en" && selected.sectorEn ? selected.sectorEn : selected.sector}</span>
                   </div>
                 </div>
 
                 <p className="text-sm text-zinc-600 leading-relaxed">
-                  {selected.descripcionLarga}
+                  {lang === "en" && selected.descripcionLargaEn ? selected.descripcionLargaEn : selected.descripcionLarga}
                 </p>
 
                 {selected.videoUrl && (
                   <div className="mt-6">
                     <p className={`text-xs font-semibold ${selected.palette.text} uppercase tracking-wider mb-3`}>
-                      Video representativo de la empresa
+                      {t("empresas.video")}
                     </p>
                     <div className="relative overflow-hidden rounded-xl border border-zinc-200 bg-black shadow-sm">
                       <video
@@ -171,7 +173,7 @@ export default function EmpresasGrid() {
                   <div className={`mt-6 border-t ${selected.palette.border} pt-6`}>
                     <div className="flex items-center justify-between mb-3">
                       <h4 className={`text-xs font-semibold ${selected.palette.text} uppercase tracking-wider`}>
-                        {selected.id === "taboada-ganadera" ? "Ejemplares Destacados" : selected.id === "taboada-carnicos" ? "Productos Importados" : selected.id === "transporte-palmar" ? "Nuestra Flota" : selected.id === "friodom" ? "Fotos Almacén" : "Fotos Destacadas"}
+                        {selected.id === "taboada-ganadera" ? t("empresas.fotosEjemplares") : selected.id === "taboada-carnicos" ? t("empresas.fotosProductos") : selected.id === "transporte-palmar" ? t("empresas.fotosFlota") : selected.id === "friodom" ? t("empresas.fotosAlmacen") : t("empresas.fotosPublicas")}
                       </h4>
                       {selected.id === "taboada-carnicos" && (
                         <a
@@ -192,18 +194,18 @@ export default function EmpresasGrid() {
                           <button
                             key={foto.src}
                             type="button"
-                            onClick={() => setZoomedCorte({ name: foto.label, file: foto.src })}
+                            onClick={() => setZoomedCorte({ name: lang === "en" && foto.labelEn ? foto.labelEn : foto.label, file: foto.src })}
                             className="group/foto text-left"
                           >
                             <div className="aspect-[4/3] overflow-hidden rounded-lg bg-zinc-100 border border-zinc-200">
                               <img
                                 src={foto.src}
-                                alt={foto.label}
+                                alt={lang === "en" && foto.labelEn ? foto.labelEn : foto.label}
                                 className={`h-full w-full ${objectClass} transition-transform duration-300 group-hover/foto:scale-110`}
                                 loading="lazy"
                               />
                             </div>
-                            <p className="mt-1.5 text-xs text-zinc-600 text-center">{foto.label}</p>
+                            <p className="mt-1.5 text-xs text-zinc-600 text-center">{lang === "en" && foto.labelEn ? foto.labelEn : foto.label}</p>
                           </button>
                         )
                       })}
@@ -213,12 +215,12 @@ export default function EmpresasGrid() {
 
                 {selected.servicios && selected.servicios.length > 0 && (
                   <div className={`mt-6 border-t ${selected.palette.border} pt-6`}>
-                    <h4 className={`text-xs font-semibold ${selected.palette.text} uppercase tracking-wider mb-3`}>Servicios</h4>
+                    <h4 className={`text-xs font-semibold ${selected.palette.text} uppercase tracking-wider mb-3`}>{t("empresas.servicios")}</h4>
                     <ul className="space-y-2">
-                      {selected.servicios.map((s) => (
-                        <li key={s} className="flex items-center gap-2 text-sm text-zinc-600">
+                      {selected.servicios.map((s, si) => (
+                        <li key={si} className="flex items-center gap-2 text-sm text-zinc-600">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-400 shrink-0" />
-                          {s}
+                          {lang === "en" && selected.serviciosEn?.[si] ? selected.serviciosEn[si] : s}
                         </li>
                       ))}
                     </ul>
@@ -228,13 +230,13 @@ export default function EmpresasGrid() {
                 {selected.cortesDestacados && selected.cortesDestacados.length > 0 && (
                   <div className={`mt-6 border-t ${selected.palette.border} pt-6`}>
                     <div className="flex items-center justify-between mb-3">
-                      <h4 className={`text-xs font-semibold ${selected.palette.text} uppercase tracking-wider`}>Catálogo destacado</h4>
+                      <h4 className={`text-xs font-semibold ${selected.palette.text} uppercase tracking-wider`}>{t("empresas.catalogodest")}</h4>
                       <a
                         href="/cortes"
                         onClick={() => setSelected(null)}
                         className={`inline-flex items-center gap-1 text-xs font-medium ${selected.palette.text} hover:underline transition-colors`}
                       >
-                        Ver más <ChevronRight size={12} />
+                        {t("empresas.verMas")} <ChevronRight size={12} />
                       </a>
                     </div>
                     <div className="grid grid-cols-3 gap-2">
@@ -245,13 +247,13 @@ export default function EmpresasGrid() {
                           <button
                             key={name}
                             type="button"
-                            onClick={() => setZoomedCorte({ name, file: corte.File })}
+                            onClick={() => setZoomedCorte({ name: lang === "en" && corte.NameEn ? corte.NameEn : name, file: corte.File })}
                             className="group/corte text-left"
                           >
                             <div className="relative aspect-square overflow-hidden rounded-lg bg-zinc-100 border border-zinc-200">
                               <img
                                 src={`/images/cortes/${corte.File}`}
-                                alt={name}
+                                alt={lang === "en" && corte.NameEn ? corte.NameEn : name}
                                 className="h-full w-full object-cover transition-transform duration-300 group-hover/corte:scale-110"
                                 loading="lazy"
                               />
@@ -259,7 +261,7 @@ export default function EmpresasGrid() {
                                 <ZoomIn size={20} className="text-white opacity-0 group-hover/corte:opacity-100 transition-opacity duration-300" />
                               </div>
                             </div>
-                            <p className="mt-1.5 text-xs text-zinc-600 text-center line-clamp-1">{name}</p>
+                            <p className="mt-1.5 text-xs text-zinc-600 text-center line-clamp-1">{lang === "en" && corte.NameEn ? corte.NameEn : name}</p>
                           </button>
                         )
                       })}

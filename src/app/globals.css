@@ -28,6 +28,19 @@ body {
   font-style: italic;
 }
 
+/* Fluid image reveal - pure CSS, no JS dependency */
+.img-fade-in {
+  animation: imgFadeIn 0.15s ease-out;
+}
+@keyframes imgFadeIn {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-spectral), Georgia, serif;
 }

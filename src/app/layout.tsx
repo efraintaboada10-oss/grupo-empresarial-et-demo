@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Outfit, Spectral } from "next/font/google"
 import "./globals.css"
 import PageTransition from "@/components/PageTransition"
+import { LanguageProvider } from "@/i18n/LanguageProvider"
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -130,9 +131,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script src="https://elfsightcdn.com/platform.js" async />
       </head>
       <body className="min-h-full flex flex-col bg-zinc-950 text-white font-sans">
-        <PageTransition>{children}</PageTransition>
+        <LanguageProvider>
+          <PageTransition>{children}</PageTransition>
+        </LanguageProvider>
       </body>
     </html>
   )
