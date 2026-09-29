@@ -1,33 +1,54 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, MoreHorizontal } from "lucide-react"
 import { useLang } from "@/i18n/LanguageProvider"
 
 const navLinks = [
   { key: "inicio", href: "/#hero" },
   { key: "empresas", href: "/#empresas" },
   { key: "porque", href: "/#por-que" },
-  { key: "cadena", href: "/#cadena-valor" },
-  { key: "liderazgo", href: "/#liderazgo" },
   { key: "catalogo", href: "/#catalogo" },
   { key: "cortes", href: "/cortes" },
   { key: "calidad", href: "/#calidad" },
-  { key: "siguenos", href: "/#instagram" },
   { key: "contacto", href: "/#contacto" },
+]
+
+const overflowLinks = [
+  { key: "cadena", href: "/#cadena-valor" },
+  { key: "liderazgo", href: "/#liderazgo" },
+  { key: "siguenos", href: "/#instagram" },
 ]
 
 export default function Header() {
   const { t, lang, setLang } = useLang()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [moreOpen, setMoreOpen] = useState(false)
+  const moreRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  useEffect(() => {
+    if (!moreOpen) return
+    const onClickOutside = (e: MouseEvent) => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) setMoreOpen(false)
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMoreOpen(false)
+    }
+    document.addEventListener("mousedown", onClickOutside)
+    document.addEventListener("keydown", onKey)
+    return () => {
+      document.removeEventListener("mousedown", onClickOutside)
+      document.removeEventListener("keydown", onKey)
+    }
+  }, [moreOpen])
 
   return (
     <header
@@ -42,16 +63,52 @@ export default function Header() {
           />
         </a>
 
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-5 flex-1 justify-end">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-6 flex-1 justify-end">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] text-zinc-300 hover:text-white transition-colors duration-200 font-serif whitespace-nowrap"
+              className="text-[15px] text-zinc-300 hover:text-white transition-colors duration-200 font-serif whitespace-nowrap"
             >
               {t(`nav.${link.key}`)}
             </a>
           ))}
+
+          <div className="relative" ref={moreRef}>
+            <button
+              onClick={() => setMoreOpen((v) => !v)}
+              aria-expanded={moreOpen}
+              aria-haspopup="true"
+              aria-label={t("nav.menuMas")}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-zinc-300 transition-colors duration-200 hover:bg-white/10 hover:text-white"
+            >
+              <MoreHorizontal size={20} />
+            </button>
+
+            <AnimatePresence>
+              {moreOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute right-0 top-full mt-2 w-52 overflow-hidden rounded-xl border border-white/10 bg-zinc-950/95 py-1.5 shadow-2xl shadow-black/50 backdrop-blur-xl"
+                >
+                  {overflowLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMoreOpen(false)}
+                      className="block px-4 py-2.5 text-[15px] text-zinc-300 transition-colors hover:bg-white/5 hover:text-white font-serif"
+                    >
+                      {t(`nav.${link.key}`)}
+                    </a>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <a
             href="https://www.instagram.com/taboadasolucionesganaderas/"
             target="_blank"
@@ -59,12 +116,12 @@ export default function Header() {
             className="text-zinc-400 hover:text-white transition-colors duration-200 flex-shrink-0"
             aria-label="Instagram"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
           </a>
           <button
             onClick={() => setLang(lang === "es" ? "en" : "es")}
-            className="ml-1 inline-flex items-center gap-1 rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-medium text-zinc-200 hover:bg-white/5 transition-colors flex-shrink-0"
-            aria-label="Cambiar idioma"
+            className="ml-1 inline-flex items-center gap-1 rounded-full border border-white/15 px-2.5 py-1 text-[12px] font-medium text-zinc-200 hover:bg-white/5 transition-colors flex-shrink-0"
+            aria-label={t("nav.cambiarIdioma")}
           >
             <span lang="es">ES</span>
             <span className="text-zinc-500">/</span>
@@ -83,7 +140,7 @@ export default function Header() {
           <button
             onClick={() => setLang(lang === "es" ? "en" : "es")}
             className="inline-flex items-center gap-1 rounded-full border border-white/15 px-3 py-1.5 text-xs font-medium text-zinc-200 hover:bg-white/5 transition-colors"
-            aria-label="Cambiar idioma"
+            aria-label={t("nav.cambiarIdioma")}
           >
             <span lang="es">ES</span>
             <span className="text-zinc-500">/</span>
@@ -92,7 +149,8 @@ export default function Header() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="text-white p-2"
-            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={mobileOpen}
+            aria-label={mobileOpen ? t("nav.cerrarMenu") : t("nav.abrirMenu")}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -109,12 +167,12 @@ export default function Header() {
             className="overflow-hidden border-t border-white/5 bg-zinc-950/95 backdrop-blur-xl lg:hidden"
           >
             <nav className="flex flex-col px-6 py-6 space-y-1">
-              {navLinks.map((link) => (
+              {[...navLinks, ...overflowLinks].map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-4 py-3 text-sm font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white font-serif"
+                  className="rounded-lg px-4 py-3 text-base font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white font-serif"
                 >
                   {t(`nav.${link.key}`)}
                 </a>

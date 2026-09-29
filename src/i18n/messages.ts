@@ -11,6 +11,11 @@ export const messages = {
       calidad: "Calidad",
       siguenos: "Síguenos",
       contacto: "Contacto",
+      mas: "Más secciones",
+      menuMas: "Ver más secciones",
+      cambiarIdioma: "Cambiar idioma",
+      abrirMenu: "Abrir menú",
+      cerrarMenu: "Cerrar menú",
     },
     hero: {
       title: "Impulsando la industria cárnica de República Dominicana",
@@ -244,6 +249,11 @@ export const messages = {
       calidad: "Quality",
       siguenos: "Follow Us",
       contacto: "Contact",
+      mas: "More sections",
+      menuMas: "See more sections",
+      cambiarIdioma: "Change language",
+      abrirMenu: "Open menu",
+      cerrarMenu: "Close menu",
     },
     hero: {
       title: "Driving the meat industry of the Dominican Republic",
@@ -317,7 +327,7 @@ export const messages = {
       agregar: "+ Add",
     },
     empresas: {
-      label: "Integrated Solutions",
+      label: "Livestock Solutions",
       title: "Our Group",
       verMas: "See more",
       cerrar: "Close",

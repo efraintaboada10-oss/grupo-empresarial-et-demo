@@ -43,19 +43,19 @@ export default function Hero() {
           whileInView="show"
           viewport={{ once: true }}
           custom={3}
-          className="mx-auto mt-6 sm:mt-8 max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6"
+          className="mx-auto mt-6 sm:mt-8 max-w-5xl grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
         >
-          <div className="rounded-xl border border-zinc-200/60 bg-white/70 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-4 text-left">
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-400 mb-1">{t("hero.vision")}</p>
-            <p className="text-xs text-zinc-600 leading-relaxed">{t("hero.visionText")}</p>
+          <div className="rounded-2xl border border-zinc-200/60 bg-white/75 backdrop-blur-md px-5 py-4 sm:px-7 sm:py-6 text-left">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-zinc-500 mb-2">{t("hero.vision")}</p>
+            <p className="text-sm sm:text-base text-zinc-700 leading-relaxed">{t("hero.visionText")}</p>
           </div>
-          <div className="rounded-xl border border-zinc-200/60 bg-white/70 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-4 text-left">
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-400 mb-1">{t("hero.mision")}</p>
-            <p className="text-xs text-zinc-600 leading-relaxed">{t("hero.misionText")}</p>
+          <div className="rounded-2xl border border-zinc-200/60 bg-white/75 backdrop-blur-md px-5 py-4 sm:px-7 sm:py-6 text-left">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-zinc-500 mb-2">{t("hero.mision")}</p>
+            <p className="text-sm sm:text-base text-zinc-700 leading-relaxed">{t("hero.misionText")}</p>
           </div>
-          <div className="rounded-xl border border-zinc-200/60 bg-white/70 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-4 text-left">
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-400 mb-1">{t("hero.valores")}</p>
-            <p className="text-xs text-zinc-600 leading-relaxed">{t("hero.valoresText")}</p>
+          <div className="rounded-2xl border border-zinc-200/60 bg-white/75 backdrop-blur-md px-5 py-4 sm:px-7 sm:py-6 text-left">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-zinc-500 mb-2">{t("hero.valores")}</p>
+            <p className="text-sm sm:text-base text-zinc-700 leading-relaxed">{t("hero.valoresText")}</p>
           </div>
         </motion.div>
 
