@@ -101,26 +101,26 @@ export default function Liderazgo() {
           whileInView="show"
           viewport={{ once: true, margin: "-40px" }}
           custom={2}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"
-        >
-          {valores.map((item) => {
-            const Icon = item.icon
-            return (
-              <div
-                key={item.key}
-                className="flex flex-col gap-4 rounded-xl border border-zinc-200 bg-zinc-50 p-6"
-              >
-                <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${item.iconBg} text-white`}>
-                  <Icon size={20} />
+className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto"
+          >
+            {valores.map((item) => {
+              const Icon = item.icon
+              return (
+                <div
+                  key={item.key}
+                  className="flex flex-col gap-5 rounded-2xl border border-zinc-200 bg-zinc-50 p-7 md:p-8"
+                >
+                  <div className={`flex h-14 w-14 items-center justify-center rounded-xl ${item.iconBg} text-white`}>
+                    <Icon size={24} />
+                  </div>
+                  <div>
+                    <p className="text-base font-semibold text-zinc-900 mb-2">{t(`liderazgo.${item.key}`)}</p>
+                    <p className="text-sm leading-relaxed text-zinc-500">{t(`liderazgo.${item.key}Desc`)}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-zinc-900 mb-1">{t(`liderazgo.${item.key}`)}</p>
-                  <p className="text-xs text-zinc-500 leading-relaxed">{t(`liderazgo.${item.key}Desc`)}</p>
-                </div>
-              </div>
-            )
-          })}
-        </motion.div>
+              )
+            })}
+          </motion.div>
       </div>
     </SectionWrapper>
   )

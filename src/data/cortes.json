@@ -70,16 +70,6 @@
     "imported": false
   },
   {
-    "Name": "BM 70-30",
-    "NameEn": "Ground Beef 70-30",
-    "File": "corte-16.webp",
-    "Category": "Cortes sin Hueso (SH)",
-    "CategoryEn": "Boneless Cuts (SH)",
-    "Description": "Mezcla jugosa con 70% carne magra y 30% grasa, para hamburguesas artesanales.",
-    "DescriptionEn": "Juicy blend of 70% lean meat and 30% fat, for artisan burgers.",
-    "imported": false
-  },
-  {
     "Name": "BM 80-20",
     "NameEn": "Ground Beef 80-20",
     "File": "corte-17.webp",
@@ -217,16 +207,6 @@
     "CategoryEn": "Boneless Cuts (SH)",
     "Description": "Carne molida superfina, ideal para embutidos y preparaciones que requieren textura uniforme.",
     "DescriptionEn": "Extra-fine ground beef, ideal for sausages and preparations requiring uniform texture.",
-    "imported": false
-  },
-  {
-    "Name": "Molida 70-30 (2da)",
-    "NameEn": "Ground Beef 70-30 (2nd)",
-    "File": "corte-48.webp",
-    "Category": "Cortes sin Hueso (SH)",
-    "CategoryEn": "Boneless Cuts (SH)",
-    "Description": "Carne molida de segunda con 70% magro, ideal para pasteles y cocción prolongada.",
-    "DescriptionEn": "Second-grade ground beef with 70% lean, ideal for patties and prolonged cooking.",
     "imported": false
   },
   {

@@ -331,7 +331,7 @@ export default function Cortes() {
               {cat === "Todas" ? t("cortes.todas") : cat}
               {cat !== "Todas" && (
                 <span className="ml-1.5 text-[10px] opacity-60">
-                  ({cortesData.filter((i) => i.Category === cat).length})
+                  ({cortesData.filter((i) => corteCategory(i, lang) === cat).length})
                 </span>
               )}
             </button>
@@ -511,7 +511,7 @@ export default function Cortes() {
                     setCotizar((p) => ({ ...p, cortes: [corteName(filtered[selectedIndex], lang)] }))
                     setShowCotizar(true)
                   }}
-                  className="mt-4 inline-flex h-10 items-center justify-center gap-2 rounded-full bg-zinc-900 px-6 text-sm font-medium text-white hover:bg-black transition-all"
+                  className="mt-4 inline-flex h-10 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-medium text-zinc-900 hover:bg-zinc-100 transition-all"
                 >
                   {t("cortes.pedirCotizacion")}
                 </button>

@@ -84,7 +84,7 @@ export const messages = {
       agregar: "+ Agregar",
     },
     empresas: {
-      label: "Soluciones Integrales",
+      label: "Soluciones Ganaderas",
       title: "Nuestro Grupo",
       verMas: "Ver más",
       cerrar: "Cerrar",

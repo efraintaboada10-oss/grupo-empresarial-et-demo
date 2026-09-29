@@ -10,31 +10,30 @@ import { useLang } from "@/i18n/LanguageProvider"
 
 const inputBase = [
   "w-full",
-  "bg-transparent",
-  "border-b border-zinc-700",
-  "px-0 py-3",
-  "text-sm text-white",
-  "placeholder:text-zinc-500",
+  "bg-white",
+  "rounded-lg border border-zinc-300",
+  "px-4 py-3",
+  "text-sm text-zinc-900",
+  "placeholder:text-zinc-400",
   "transition-all duration-300",
-  "focus:border-white focus:outline-none focus:ring-0",
-  "autofill:bg-transparent",
-  "[-webkit-autofill]:bg-transparent",
-  "[-webkit-autofill]:text-white",
-  "[-webkit-autofill]:shadow-[0_0_0_1000px_transparent_inset]",
-  "[-webkit-text-fill-color]:white",
+  "focus:border-zinc-900 focus:outline-none focus:ring-0",
+  "autofill:bg-white",
+  "[-webkit-autofill]:bg-white",
+  "[-webkit-autofill]:text-zinc-900",
+  "[-webkit-autofill]:shadow-[0_0_0_1000px_white_inset]",
+  "[-webkit-text-fill-color]:#18181b",
 ].join(" ")
 
 const labelBase = [
   "block text-xs font-medium tracking-wider uppercase",
-  "text-zinc-500",
-  "mb-1",
+  "text-zinc-400",
+  "mb-2",
 ].join(" ")
 
 export default function Contacto() {
   const { t } = useLang()
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState("")
-  const [focused, setFocused] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -106,12 +105,9 @@ export default function Contacto() {
                         name="nombre"
                         type="text"
                         required
-                        onFocus={() => setFocused("nombre")}
-                        onBlur={() => setFocused(null)}
                         className={inputBase}
                         placeholder={t("contacto.placeholderNombre")}
                       />
-                      <div className={`h-px bg-white transition-transform duration-300 ${focused === "nombre" ? "scale-x-100" : "scale-x-0"}`} />
                     </div>
                     <div>
                       <label htmlFor="email" className={labelBase}>{t("contacto.correo")}</label>
@@ -120,12 +116,9 @@ export default function Contacto() {
                         name="email"
                         type="email"
                         required
-                        onFocus={() => setFocused("email")}
-                        onBlur={() => setFocused(null)}
                         className={inputBase}
                         placeholder={t("contacto.placeholderCorreo")}
                       />
-                      <div className={`h-px bg-white transition-transform duration-300 ${focused === "email" ? "scale-x-100" : "scale-x-0"}`} />
                     </div>
                   </div>
 
@@ -136,12 +129,9 @@ export default function Contacto() {
                       name="mensaje"
                       required
                       rows={4}
-                      onFocus={() => setFocused("mensaje")}
-                      onBlur={() => setFocused(null)}
                       className={`${inputBase} resize-none`}
                       placeholder={t("contacto.placeholderMensaje")}
                     />
-                    <div className={`h-px bg-white transition-transform duration-300 ${focused === "mensaje" ? "scale-x-100" : "scale-x-0"}`} />
                   </div>
 
                   <button
