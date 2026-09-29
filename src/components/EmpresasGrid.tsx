@@ -58,8 +58,8 @@ export default function EmpresasGrid() {
       >
         <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${empresa.gradient}`} />
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="relative z-10 p-8 md:p-9">
-          <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-zinc-50 to-white border border-zinc-200 p-3 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-[var(--accent)]/30 group-hover:shadow-[var(--accent-dim)]">
+        <div className="relative z-10 p-8 md:p-10">
+          <div className="mb-7 flex h-28 w-28 items-center justify-center rounded-2xl bg-gradient-to-br from-zinc-50 to-white border border-zinc-200 p-3 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-[var(--accent)]/30 group-hover:shadow-[var(--accent-dim)]">
             <img
               src={logoSrc}
               alt={empresa.nombre}
@@ -67,12 +67,12 @@ export default function EmpresasGrid() {
               loading="lazy"
             />
           </div>
-          <h3 className="text-2xl font-semibold text-zinc-900">{lang === "en" && empresa.nombreEn ? empresa.nombreEn : empresa.nombre}</h3>
-          <p className="mt-3 text-[15px] leading-relaxed text-zinc-600 line-clamp-3">
+          <h3 className="text-3xl font-semibold text-zinc-900">{lang === "en" && empresa.nombreEn ? empresa.nombreEn : empresa.nombre}</h3>
+          <p className="mt-4 text-base leading-relaxed text-zinc-600 line-clamp-4">
             {lang === "en" && empresa.descripcionEn ? empresa.descripcionEn : empresa.descripcion}
           </p>
-          <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-zinc-400 group-hover:text-zinc-600 transition-colors">
-            {t("empresas.verMas")} <ChevronRight size={13} />
+          <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-zinc-400 group-hover:text-zinc-600 transition-colors">
+            {t("empresas.verMas")} <ChevronRight size={14} />
           </span>
         </div>
       </motion.button>
@@ -85,13 +85,13 @@ export default function EmpresasGrid() {
         <SectionTitle label={t("empresas.label")} title={t("empresas.title")} />
 
         <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
             {first3.map((empresa, idx) => (
               <Card key={empresa.id} empresa={empresa} idx={idx} startDelay={0} />
             ))}
           </div>
 
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {last2.map((empresa, idx) => (
               <Card key={empresa.id} empresa={empresa} idx={idx} startDelay={3} />
             ))}
