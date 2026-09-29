@@ -18,8 +18,8 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/20 to-white/70" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <h1 className="mt-6 text-2xl font-bold tracking-tight text-zinc-900 sm:text-5xl lg:text-6xl leading-tight text-balance font-serif">
+      <div className="relative z-10 mx-auto max-w-4xl px-6 pt-24 pb-12 sm:pt-28 sm:pb-16 text-center">
+        <h1 className="text-xl font-bold tracking-tight text-zinc-900 sm:text-4xl lg:text-5xl leading-tight text-balance font-serif">
           <SplitText
             text={t("hero.title")}
             delay={0.15}

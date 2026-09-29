@@ -26,7 +26,7 @@ const inputBase = [
 
 const labelBase = [
   "block text-xs font-medium tracking-wider uppercase",
-  "text-zinc-400",
+  "text-zinc-600",
   "mb-2",
 ].join(" ")
 
@@ -68,10 +68,10 @@ export default function Contacto() {
             viewport={{ once: true, margin: "-40px" }}
             className="lg:col-span-3"
           >
-            <div className="rounded-2xl border border-white/5 bg-white/[0.03] backdrop-blur-sm p-8 md:p-10">
-              <h3 className="text-lg font-semibold text-white mb-8 flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/10">
-                  <Sparkles size={12} className="text-white" />
+            <div className="rounded-2xl bg-white p-8 md:p-10 shadow-xl shadow-black/20">
+              <h3 className="text-lg font-semibold text-zinc-900 mb-8 flex items-center gap-2">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-zinc-100">
+                  <Sparkles size={12} className="text-zinc-700" />
                 </span>
                 {t("contacto.enviarMensaje")}
               </h3>
@@ -82,18 +82,18 @@ export default function Contacto() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex flex-col items-center justify-center py-12 text-center"
                 >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-white/5 mb-6">
-                    <Check size={24} className="text-white" />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 mb-6">
+                    <Check size={24} className="text-zinc-900" />
                   </div>
-                  <h4 className="text-xl font-semibold text-white">{t("contacto.mensajeRecibido")}</h4>
-                  <p className="mt-2 text-sm text-zinc-400 max-w-xs">
+                  <h4 className="text-xl font-semibold text-zinc-900">{t("contacto.mensajeRecibido")}</h4>
+                  <p className="mt-2 text-sm text-zinc-500 max-w-xs">
                     {t("contacto.gracias")}
                   </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {error && (
-                    <p className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-300">
+                    <p className="rounded-lg border border-red-300 bg-red-50 px-3 py-2 text-sm text-red-700">
                       {error}
                     </p>
                   )}
@@ -136,9 +136,9 @@ export default function Contacto() {
 
                   <button
                     type="submit"
-                    className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-zinc-900 overflow-hidden"
+                    className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-full border border-zinc-900 bg-zinc-900 px-8 text-sm font-medium text-white transition-all duration-300 hover:bg-black overflow-hidden"
                   >
-                    <span className="absolute inset-0 rounded-full bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <span className="absolute inset-0 rounded-full bg-zinc-700 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                     <span className="relative z-10 flex items-center gap-2">
                       <Send size={14} />
                       {t("contacto.enviar")}
